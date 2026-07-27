@@ -1,0 +1,109 @@
+
+
+
+
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*colors:*/
+:root {
+    --background:#FBFBFB;
+
+    --backgroundItemRed:#FE9494;
+    --backgroundItemBlue:#79D3FB;
+    --backgroundItemOrange:#FDCF8B;
+
+    --text-color:#363636;
+    --text-accent-color:#CC00FF;
+
+    --font-body: "Raleway", sans-serif;
+    --font-display: "Bitcount Grid Double", sans-serif;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 3rem;
+
+    --line-height: 1.6;
+
+}
+
+/*Styling reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Typography*/
+
+
+/* Base */
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--line-height);
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+.logoText {
+    font-family: var(--font-display);
+    font-weight: 320;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: var(--text-3xl);
+}
+
+h2 {
+    font-size: var(--text-2xl);
+}
+
+h3 {
+    font-size: var(--text-xl);
+}
+
+/* Body Text */
+p,
+li,
+span,
+a,
+button,
+input,
+textarea {
+    font-family: var(--font-body);
+}
+
+span {
+    color:var(--text-accent-color);
+}
+/* Navigation */
+.navLink {
+    font-size: var(--text-base);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Hero */
+.heroTitle {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 800;
+}
+
+.heroSubtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 300;
+}
