@@ -1,27 +1,48 @@
 import './Container.css'
 
-function Container({children}) {
+function Container({
+                       title,
+                       children,
+                       width = '100%',
+                       height
+                   }) {
 
     return <>
 
         <div
+        className="containerBorder"
+        >
+
+
+        <article
             className="containerOuterWrapper"
+            style={{
+                width,
+                ...(height ? { height } : {})
+                }}
         >
 
             <div
                 className="containerInnerWrapper"
             >
 
-                <div
-                className="containerTitle"
+                <header
+                    className="containerTitle"
                 >
+                    <h3>{title}</h3>
+                </header>
 
-                </div>
+                <section
+                className="containerContent"
+                >
+                    {children}
+
+                </section>
 
             </div>
 
+        </article>
         </div>
-
     </>
 
 }

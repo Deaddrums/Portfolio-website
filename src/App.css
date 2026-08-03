@@ -8,29 +8,214 @@
 
 /*colors:*/
 :root {
-    --background:#FBFBFB;
-
     --backgroundItemRed:#FE9494;
     --backgroundItemBlue:#79D3FB;
     --backgroundItemOrange:#FDCF8B;
+    --background-container:#FFF0DD;
+    --background-container-title:#363636;
+
+    --main-blue:#079FE0;
+    --main-red:#FD1D1D;
+    --main-orange:#FCB045;
 
     --text-color:#363636;
     --text-accent-color:#CC00FF;
+    --text-title-color-alternate:white;
 
-    --font-body: "Raleway", sans-serif;
-    --font-display: "Bitcount Grid Double", sans-serif;
+    --border-color:#363636;
+    --border-grey:#999999;
 
-    --text-xs: 0.75rem;
-    --text-sm: 0.875rem;
-    --text-base: 1rem;
-    --text-lg: 1.125rem;
-    --text-xl: 1.5rem;
-    --text-2xl: 2rem;
-    --text-3xl: 3rem;
+        /* =========================
+           BRAND COLORS
+        ========================= */
 
-    --line-height: 1.6;
+        --brand: #4d000f;
+        --brand-light: #72091e;
+        --brand-pale: #ffdada;
+        --brand-soft: #ffb3b5;
+        --brand-accent: #fe757f;
 
-}
+        --text-on-brand: #ffffff;
+        --text-on-brand-dark: #40000b;
+        --text-on-brand-light: #881c2c;
+
+
+        /* =========================
+           SECONDARY COLORS
+        ========================= */
+
+        --secondary: #565e77;
+        --secondary-light: #d7dffd;
+        --secondary-soft: #dae2ff;
+        --secondary-muted: #bec6e3;
+
+        --text-on-secondary: #ffffff;
+        --text-on-secondary-dark: #131b30;
+        --text-on-secondary-muted: #3e465e;
+        --text-on-secondary-light: #5a627b;
+
+
+        /* =========================
+           ACCENT / GOLD COLORS
+        ========================= */
+
+        --accent: #735c00;
+        --accent-light: #cba72f;
+        --accent-soft: #ffe088;
+        --accent-muted: #e9c349;
+
+        --text-on-accent: #ffffff;
+        --text-on-accent-dark: #241a00;
+        --text-on-accent-muted: #574500;
+        --text-on-accent-light: #4e3d00;
+
+
+        /* =========================
+           PAGE COLORS
+        ========================= */
+
+        --background: #f9f9f9;
+        --background-text: #1a1c1c;
+
+
+        /* =========================
+           SURFACES
+        ========================= */
+
+        --surface-white: #ffffff;
+        --surface-light: #f3f3f3;
+        --surface: #eeeeee;
+        --surface-dark: #e8e8e8;
+        --surface-darker: #e2e2e2;
+        --surface-dim: #dadada;
+
+        --surface-text: #1a1c1c;
+        --surface-text-muted: #574142;
+
+        --surface-inverse: #2f3131;
+        --surface-inverse-text: #f1f1f1;
+
+        --surface-tint: #a83541;
+
+
+        /* =========================
+           CARDS / PANELS
+        ========================= */
+
+        --card: #eeeeee;
+        --card-light: #f3f3f3;
+        --card-dark: #e8e8e8;
+        --card-darker: #e2e2e2;
+
+
+        /* =========================
+           BORDERS
+        ========================= */
+
+        --border: #8a7171;
+        --border-light: #debfbf;
+
+
+        /* =========================
+           ERROR COLORS
+        ========================= */
+
+        --danger: #ba1a1a;
+        --danger-light: #ffdad6;
+
+        --text-on-danger: #ffffff;
+        --text-on-danger-light: #93000a;
+
+
+        /* =========================
+           SPACING
+        ========================= */
+
+        --base: 8px;
+        --gap: 24px;
+
+        --content-max-width: 1280px;
+
+        --mobile-margin: 16px;
+        --desktop-margin: 64px;
+
+
+        /* =========================
+           BORDER RADIUS
+        ========================= */
+
+        --radius-small: 0.125rem;
+        --radius-medium: 0.25rem;
+        --radius-large: 0.5rem;
+        --radius-pill: 0.75rem;
+
+
+    /* =========================
+  FONT FAMILIES
+========================= */
+
+    --font-family-label: "Raleway", sans-serif;
+    --font-family-display: "Raleway", sans-serif;
+    --font-family-heading: "Raleway", sans-serif;
+    --font-family-body: "Raleway", sans-serif;
+    --font-family-caption: "Raleway", sans-serif;
+
+    /* =========================
+       FONT SIZES
+    ========================= */
+
+    --font-size-label: 14px;
+
+    --font-size-hero-mobile: 48px;
+    --font-size-hero: 72px;
+
+    --font-size-section-title: 40px;
+    --font-size-card-title: 32px;
+
+    --font-size-body: 16px;
+    --font-size-body-large: 18px;
+
+    --font-size-caption: 12px;
+
+        /* =========================
+           LINE HEIGHTS
+        ========================= */
+
+        --line-label: 20px;
+
+        --line-hero-mobile: 52px;
+        --line-hero: 76px;
+
+        --line-section-title: 48px;
+        --line-card-title: 40px;
+
+        --line-body: 24px;
+        --line-body-large: 28px;
+
+        --line-caption: 16px;
+
+
+        /* =========================
+           LETTER SPACING
+        ========================= */
+
+        --tracking-label: 0.05em;
+
+        --tracking-hero-mobile: -0.02em;
+        --tracking-hero: -0.04em;
+
+        --tracking-section-title: -0.02em;
+
+
+        /* =========================
+           FONT WEIGHTS
+        ========================= */
+
+        --weight-regular: 400;
+        --weight-medium: 500;
+        --weight-bold: 700;
+    }
+
 
 /*Styling reset*/
 * {
@@ -41,39 +226,66 @@
 
 /*Typography*/
 
-
 /* Base */
+
 body {
-    font-family: var(--font-body);
-    font-size: var(--text-base);
-    line-height: var(--line-height);
-    font-weight: 400;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-body);
+    font-weight: var(--weight-regular);
     color: var(--text-color);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.appWrapper {
+    height: 50vh;
+
+    overflow-y: scroll;
+
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Headings */
+
 h1,
 h2,
 h3,
 .logoText {
-    font-family: var(--font-display);
-    font-weight: 320;
+    font-family: var(--font-family-display);
+    font-weight: var(--weight-medium);
     line-height: 1.1;
 }
 
 h1 {
-    font-size: var(--text-3xl);
+    font-size: var(--font-size-hero);
+    line-height: var(--line-hero);
+    letter-spacing: var(--tracking-hero);
 }
 
 h2 {
-    font-size: var(--text-2xl);
+    font-size: var(--font-size-section-title);
+    line-height: var(--line-section-title);
+    letter-spacing: var(--tracking-section-title);
 }
 
 h3 {
-    font-size: var(--text-xl);
+    font-size: var(--font-size-card-title);
+    line-height: var(--line-card-title);
 }
 
 /* Body Text */
+
 p,
 li,
 span,
@@ -81,29 +293,75 @@ a,
 button,
 input,
 textarea {
-    font-family: var(--font-body);
+    font-family: var(--font-family-body);
 }
 
-span {
-    color:var(--text-accent-color);
+p,
+li {
+    font-size: var(--font-size-body);
+    line-height: var(--line-body);
+    font-weight: var(--weight-regular);
 }
+
+/*span {*/
+/*    color: var(--text-accent-color);*/
+/*}*/
+
 /* Navigation */
+
 .navLink {
-    font-size: var(--text-base);
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-family: var(--font-family-label);
+    font-size: var(--font-size-label);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-label);
+
+    letter-spacing: var(--tracking-label);
     text-transform: uppercase;
 }
 
-/* Hero */
+/* HeroPage */
+
 .heroTitle {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 8rem);
-    font-weight: 800;
+    font-family: var(--font-family-display);
+
+    font-size: clamp(
+            var(--font-size-hero-mobile),
+            8vw,
+            var(--font-size-hero)
+    );
+
+    line-height: var(--line-hero);
+    letter-spacing: var(--tracking-hero);
+
+    font-weight: var(--weight-bold);
 }
 
 .heroSubtitle {
-    font-family: var(--font-body);
-    font-size: var(--text-lg);
-    font-weight: 300;
+    font-family: var(--font-family-body);
+
+    font-size: var(--font-size-body-large);
+    line-height: var(--line-body-large);
+
+    font-weight: var(--weight-regular);
+}
+
+.heroContainerWrapper {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: var(--base);
+}
+
+.heroContainerWrapper p {
+    padding-left: var(--base);
+}
+
+.heroSectionContainer {
+    display: flex;
+    flex-direction: column;
+
+    margin: -100px
 }

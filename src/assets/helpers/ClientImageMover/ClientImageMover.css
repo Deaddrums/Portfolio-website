@@ -1,0 +1,55 @@
+.carouselContainer {
+    width: 100%;
+    overflow: hidden;
+
+    mask-image: linear-gradient(
+            to right,
+            transparent,
+            white 10%,
+            white 90%,
+            transparent
+    );
+}
+
+.carouselTrack {
+    display: flex;
+    width: fit-content;
+    gap: 1rem;
+
+    top: -10%;
+
+    animation: scrollLogos 30s linear infinite;
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+
+
+.clientLogo {
+    height: 80px;
+    width: auto;
+
+    padding-top: 10px;
+    object-fit: contain;
+
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.clientLogo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+
+
+}
+
+@keyframes scrollLogos {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}

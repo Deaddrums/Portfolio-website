@@ -1,0 +1,263 @@
+.heroSection {
+    width: 100%;
+    max-width: var(--content-max-width);
+
+    height: 750px;
+
+    margin: 0 auto;
+
+    padding-left: var(--desktop-margin);
+    padding-right: var(--desktop-margin);
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* ======================
+   GRID
+====================== */
+
+.heroGrid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 4rem;
+
+    align-items: center;
+}
+
+
+/* ======================
+   LEFT COLUMN
+====================== */
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    padding: 2rem;
+
+    background-color: var(--surface-white);
+
+    border: 2px solid var(--border);
+}
+
+
+/* ======================
+   TAG
+====================== */
+
+.heroTag {
+    display: flex;
+    *align-items: center;
+
+    gap: 1em;
+}
+
+/*.heroTagLine {*/
+/*    width: 5px;*/
+/*    height: 2px;*/
+
+/*    background-color: var(--brand);*/
+/*}*/
+
+.heroTagText {
+    font-family: var(--font-family-label);
+    font-size: var(--font-size-label);
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    color: var(--surface-text-muted);
+}
+
+
+/* ======================
+   TITLE
+====================== */
+
+.heroTitle {
+    font-family: var(--font-family-display);
+
+    font-size: clamp(
+            var(--font-size-hero-mobile),
+            7vw,
+            var(--font-size-hero)
+    );
+
+    height: 180px;
+    line-height: 0.8;
+    overflow: hidden;
+}
+
+.heroGradientTitle {
+    background: linear-gradient(
+            90deg,
+            var(--main-blue),
+            var(--main-red),
+            var(--main-orange)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ======================
+   TEXT
+====================== */
+
+.heroDescription {
+    max-width: 600px;
+
+    font-size: var(--font-size-body-large);
+    line-height: var(--line-body-large);
+
+    color: var(--surface-text-muted);
+}
+
+
+/* ======================
+   CTA
+====================== */
+
+.heroActions {
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+
+.heroButton {
+    padding: 1rem 2rem;
+
+    cursor: pointer;
+
+    color: var(--text-color);
+    font-size: 15px;
+    border: 2px solid var(--brand);
+
+    transition: 0.3s ease;
+}
+
+.heroButton:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ======================
+   USP
+====================== */
+
+.heroUSP {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.25rem;
+
+    padding-left: 1rem;
+
+    border-left: 2px solid var(--border-light);
+}
+
+.heroUSP span {
+    font-weight: var(--weight-bold);
+
+    color: var(--brand);
+}
+
+.heroUSP small {
+    color: var(--surface-text-muted);
+}
+
+
+/* ======================
+   IMAGE
+====================== */
+
+.heroImageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.heroImageFrame {
+    width: 100%;
+    max-width: 500px;
+
+    aspect-ratio: 1;
+
+    /*padding: 1rem;*/
+
+    /*background-color: var(--surface-white);*/
+
+    /*border-radius: 15px;*/
+    /*border: 2px solid var(--border-light);*/
+
+    overflow: hidden;
+
+}
+
+.heroImageFrame img {
+    width: 100%;
+    height: 100%;
+
+
+    object-fit: contain;
+}
+
+
+/* ======================
+   DECORATION
+====================== */
+
+.heroTriangle {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid rgba(77, 0, 15, 0.08);
+}
+
+.heroTriangleRight {
+    top: 120px;
+    right: 10%;
+
+    transform: scale(1.5);
+}
+
+.heroTriangleLeft {
+    bottom: 150px;
+    left: -2%;
+
+    transform: rotate(145deg);
+}
+
+
+/* ======================
+   MOBILE
+====================== */
+
+@media (max-width: 900px) {
+
+    .heroGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroContent {
+        order: 2;
+    }
+
+    .heroImageContainer {
+        order: 1;
+    }
+
+}

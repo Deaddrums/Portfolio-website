@@ -1,0 +1,43 @@
+.trustedBy {
+    width: 100%;
+
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.trustedByTitle {
+    margin-bottom: 2rem;
+
+    font-size: 0.9rem;
+    letter-spacing: 0.25rem;
+
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+.trustedByRow {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    overflow: hidden;
+}
+
+.clientLogo {
+    height: 60px;
+    width: auto;
+
+    object-fit: contain;
+
+    opacity: 0.6;
+    filter: grayscale(100%);
+
+    transition: all 0.4s ease;
+}
+
+.clientLogo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}

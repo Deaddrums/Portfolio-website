@@ -1,0 +1,215 @@
+.movingPortfolioOuterWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 55.5%;
+    margin: -100px;
+
+    border: 2px solid var(--border);
+    background: var(--surface-white);
+
+    /*border-top: 1px solid rgba(255,255,255,0.15);*/
+    /*border-bottom: 1px solid rgba(255,255,255,0.15);*/
+}
+
+.carouselSection,
+.showcaseSection {
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================================
+   LABELS
+===================================== */
+
+.portfolioLabel {
+    height: 24px;
+
+
+    font-family: var(--font-family-label);
+
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+
+    opacity: 0.6;
+}
+
+.portfolioLabel p {
+    border-bottom: 1px solid var(--border) ;
+}
+
+/*.carouselSection .portfolioLabel {*/
+/*    position: absolute;*/
+/*    top: 80%;*/
+/*    left: 21%;*/
+/*}*/
+
+/* =====================================
+   CLIENT LOGOS
+===================================== */
+
+.carouselSection {
+    /*flex: 1;*/
+    /*min-width: 0;*/
+
+    width: 69%;
+    flex: 3;
+
+    margin-left: 10px;
+}
+
+.carouselContainer {
+    overflow: hidden;
+
+    mask-image: linear-gradient(
+            to right,
+            transparent,
+            white 10%,
+            white 90%,
+            transparent
+    );
+}
+
+.carouselTrack {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: fit-content;
+
+    gap: 3rem;
+
+    animation: scrollLogos 30s linear infinite;
+}
+
+.carouselTrack:hover {
+    animation-play-state: paused;
+}
+
+.clientLogo {
+    height: 100px;
+    width: auto;
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    object-fit: contain;
+
+    opacity: 0.6;
+
+    filter: grayscale(100%);
+
+    transition: all 0.3s ease;
+}
+
+/*.carouselTrack img {*/
+/*    height: 90px;*/
+/*}*/
+
+.clientLogo:hover {
+    opacity: 1;
+
+    filter: grayscale(0%);
+
+    transform: scale(1.05);
+}
+
+@keyframes scrollLogos {
+
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+
+}
+
+/* =====================================
+   SHOWCASE
+===================================== */
+
+.showcaseSection {
+    width: 140px;
+    flex-shrink: 0;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+
+
+}
+
+.showcaseDisplay {
+    height: 130px;
+
+    overflow: hidden;
+
+    margin-top: 5px;
+
+    border-left: 2px solid var(--border-light) ;
+    padding-left: 15px;
+    gap: 10px;
+    background: var(--surface-white);
+}
+
+.showcaseLogo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    animation: fadeProject 4s ease-in-out;
+}
+
+/*.showcaseLogo:hover {*/
+/*    animation-play-state: paused;*/
+/*    scale: 2;*/
+/*}*/
+
+@keyframes fadeProject {
+
+    0% {
+        opacity: 0;
+        transform: scale(1.03);
+    }
+
+    15% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    85% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .movingPortfolioOuterWrapper {
+        flex-direction: column;
+
+        gap: 2rem;
+
+        padding: 2rem;
+    }
+
+    .showcaseSection {
+        width: 100%;
+    }
+
+}

@@ -1,52 +1,38 @@
 import './Navbar.css'
-import logo from './../../images/Clean logo.jpg'
+import logo from './../../images/clean-logo-transparent.png'
 
-function Navbar () {
+function Navbar() {
 
     return <>
 
-        <div
-        className="navOuterWrapper"
-        >
+        <div className="navOuterWrapper">
 
-            <div
-                className="navInnerWrapper">
+            <div className="navInnerWrapper">
 
-<div className="navLogoAndName">
-    <img id="logoJh"
-         src={logo}
-         alt="Logo van Jim Horvath"/>
+                <div className="navLogoAndName">
+                    <img src={logo} alt="Logo"/>
 
-    <h1>Jim Horvath</h1>
+                    <h1><u><strong>Jim Horvath</strong></u></h1>
+                </div>
 
-</div>
-
-                <div
-                className="navListItems"
-                >
+                <nav className="navListItems">
                     <ul>
-                        <li>
-                            About
-                        </li>
-                        <li>
-                            Work
-                        </li>
-                        <li>
-                            Services
-                        </li>
-                        <li>
-                            Blogs
-                        </li>
+                        <li>About</li>
+                        <li>Work</li>
+                        <li>Services</li>
+                        <li>Blogs</li>
                     </ul>
+                </nav>
+
+                <div className="navButtonWrapper">
+                    <button className="navButton">
+                        Let's Talk
+                    </button>
                 </div>
 
             </div>
 
-<div
-className="navBackgroundGradient"
->
-
-</div>
+            <div className="navBackgroundGradient"></div>
 
         </div>
 
