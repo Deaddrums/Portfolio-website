@@ -63,6 +63,8 @@
         --accent-light: #cba72f;
         --accent-soft: #ffe088;
         --accent-muted: #e9c349;
+        --accent-hightlight: #a86b00;
+
 
         --text-on-accent: #ffffff;
         --text-on-accent-dark: #241a00;
@@ -77,6 +79,10 @@
         --background: #f9f9f9;
         --background-text: #1a1c1c;
 
+    --background-soft: #FFF7EB;
+    --background-softer:#FFFDFA;
+
+    --background-navbar: rgba(248, 244, 237, 0.75);
 
         /* =========================
            SURFACES
@@ -194,6 +200,7 @@
 
         --line-caption: 16px;
 
+    --navbar-height: 120px;
 
         /* =========================
            LETTER SPACING
@@ -215,6 +222,7 @@
         --weight-medium: 500;
         --weight-bold: 700;
     }
+
 
 
 /*Styling reset*/
@@ -241,19 +249,26 @@ html {
 }
 
 .appWrapper {
-    height: 50vh;
+    /*min-height: 100vh;*/
 
-    overflow-y: scroll;
-
+    /*overflow-y: scroll;*/
     scroll-snap-type: y mandatory;
+
+        min-height: 100vh;
+
+        overflow: visible;
+
 }
+
+
 
 section {
     scroll-snap-align: start;
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+
 }
 
 /* Headings */
@@ -363,5 +378,34 @@ li {
     display: flex;
     flex-direction: column;
 
-    margin: -100px
+}
+
+#Hero {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/*Button styling*/
+button {
+        cursor: pointer;
+
+        background: var(--background);
+        border: 2px solid var(--brand);
+
+        color: var(--text-on-accent-dark);
+
+        /*font-size: 24px;*/
+
+        transition: 0.3s;
+}
+button:hover {
+     background: var(--brand);
+     color:var(--background) ;
+
+ }
+
+
+::selection {
+    background: var(--brand-light);
+    color: var(--background);
 }

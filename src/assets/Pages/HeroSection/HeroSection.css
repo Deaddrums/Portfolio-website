@@ -2,15 +2,17 @@
     width: 100%;
     max-width: var(--content-max-width);
 
-    height: 750px;
+    /*height: 750px;*/
 
-    margin: 0 auto;
+    margin: 30px;
 
     padding-left: var(--desktop-margin);
     padding-right: var(--desktop-margin);
 
     display: flex;
     align-items: center;
+
+
 }
 
 
@@ -43,7 +45,12 @@
 
     background-color: var(--surface-white);
 
-    border: 2px solid var(--border);
+    /*border: 2px solid var(--border);*/
+
+    /*box-shadow:*/
+    /*        0 0 0 1px rgba(0,168,255,0.08),*/
+    /*        0 7px 20px rgba(0,0,0,0.35);*/
+
 }
 
 
@@ -146,9 +153,9 @@
     transition: 0.3s ease;
 }
 
-.heroButton:hover {
-    transform: translateY(-3px);
-}
+/*.heroButton:hover {*/
+/*    transform: translateY(-3px);*/
+/*}*/
 
 
 /* ======================
@@ -184,6 +191,8 @@
 .heroImageContainer {
     display: flex;
     justify-content: center;
+
+    gap: 10%;
 }
 
 .heroImageFrame {
@@ -192,7 +201,8 @@
 
     aspect-ratio: 1;
 
-    /*padding: 1rem;*/
+    padding: 1rem;
+
 
     /*background-color: var(--surface-white);*/
 
@@ -206,7 +216,6 @@
 .heroImageFrame img {
     width: 100%;
     height: 100%;
-
 
     object-fit: contain;
 }
