@@ -1,157 +1,116 @@
-import { useEffect, useState } from 'react';
-import './MovingPortfolio.css';
-import { clientData } from '../../Data/clientData.jsx';
+import { useEffect, useMemo, useState } from "react";
+import "./MovingPortfolio.css";
+
+import { clientData } from "../../Data/clientData.jsx";
 import { contentData } from "../../Data/contentData.jsx";
 
-// import dream from './../../images/Clients/dreamhaven.jpg';
-// import beth from './../../images/Clients/32-324256_product-bethesda-logo-png.png';
-// import lh from './../../images/Clients/localheroes_clean.webp';
-// import nep from './../../images/Clients/LOGO-NEP.png';
-// import pg from './../../images/Clients/playground.png';
-// import ubi from './../../images/Clients/Ubisoft_logo.svg.webp';
-// import wb from './../../images/Clients/Warner_Bros._Games_Dec-2023_(without_wordmark).svg';
-// import xbox from './../../images/Clients/Xbox_Game_Studios.svg';
-// import zeni from './../../images/Clients/zenimax-lllogo.jpg';
-// import ps from './../../images/Clients/playstation-3-logo-png-transparent.png';
-//
-// import baneOfTheTalebearer from './../../images/Showcase materials/Bane of the talebearer.jpg';
-// import barbearians from './../../images/Showcase materials/Barbeardians.jpg';
-// import benBorrill from './../../images/Showcase materials/Ben Borrill.jpg';
-// import binnensteBuiten from './../../images/Showcase materials/BinnensteBuiten.jpg';
-// import brommerOpZee from './../../images/Showcase materials/brommer op zee.png';
-// import ditIsDeKwestie from './../../images/Showcase materials/dit is de kwestie.png';
-// import dreamSchool from './../../images/Showcase materials/DreamSchool.jpg';
-// import eigenHuisEnTuin from './../../images/Showcase materials/Eigen huis en tuin.webp';
-// import hogwartsLegacy from './../../images/Showcase materials/Hogwarts Legacy.jpg';
-// import horizonForbiddenWest from './../../images/Showcase materials/Horizon forbidden west.jpg';
-// import kkdDivisie from './../../images/Showcase materials/KKD divisie.jpg';
-// import lantre from './../../images/Showcase materials/Lantre.png';
-// import lauriefish from './../../images/Showcase materials/Lauriefish.jpg';
-// import legoHorizon from './../../images/Showcase materials/Lego Horizon.jpg';
-// import levendleed from './../../images/Showcase materials/Levendleed.jpg';
-// import loyalty from './../../images/Showcase materials/Loyalty.jpg';
-// import mk1 from './../../images/Showcase materials/MK1.png';
-// import mk1Khaos from './../../images/Showcase materials/MK1-Khaos.jpg';
-// import obskvvr from './../../images/Showcase materials/OBSKVVR.jpg';
-// import screenshot from './../../images/Showcase materials/Screenshot 2025-09-08 at 15.00.59.png';
-// import sunderfolk from './../../images/Showcase materials/Sunderfolk.jpg';
-// import wildgate from './../../images/Showcase materials/Wildgate.jpg';
-// //
-// // const clientLogos = [
-// //     dream,
-// //     beth,
-// //     lh,
-// //     nep,
-// //     pg,
-// //     ubi,
-// //     wb,
-// //     xbox,
-// //     zeni,
-// //     ps,
-// // ];
-//
-// const showcaseLogos = [
-//     baneOfTheTalebearer,
-//     barbearians,
-//     benBorrill,
-//     binnensteBuiten,
-//     brommerOpZee,
-//     ditIsDeKwestie,
-//     dreamSchool,
-//     eigenHuisEnTuin,
-//     hogwartsLegacy,
-//     horizonForbiddenWest,
-//     kkdDivisie,
-//     lantre,
-//     lauriefish,
-//     legoHorizon,
-//     levendleed,
-//     loyalty,
-//     mk1,
-//     mk1Khaos,
-//     obskvvr,
-//     screenshot,
-//     sunderfolk,
-//     wildgate,
-// ];
-
-
-
 function MovingPortfolio() {
-    const duplicatedClients = [...clientData, ...clientData];
+    const duplicatedClients = useMemo(
+        () => [...clientData, ...clientData],
+        []
+    );
 
-    const featuredProjects = contentData.filter(
-        (project) => project.featured
-);
+    const featuredProjects = useMemo(
+        () => contentData.filter((project) => project.featured),
+        []
+    );
 
     const [activeProject, setActiveProject] = useState(0);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveProject((prev) =>
-                prev === featuredProjects.length - 1
+        if (featuredProjects.length <= 1) {
+            return undefined;
+        }
+
+        const interval = window.setInterval(() => {
+            setActiveProject((previousProject) =>
+                previousProject === featuredProjects.length - 1
                     ? 0
-                    : prev + 1
+                    : previousProject + 1
             );
         }, 4000);
 
-        return () => clearInterval(interval);
+        return () => window.clearInterval(interval);
     }, [featuredProjects.length]);
 
+    const currentProject = featuredProjects[activeProject];
+
     return (
-        <section className="movingPortfolioOuterWrapper">
-
+        <section
+            className="movingPortfolioOuterWrapper"
+            aria-label="Selected clients and featured work"
+        >
             <div className="carouselSection">
+                <div className="movingPortfolioSectionHeader">
+                    <span className="movingPortfolioSectionNumber">
+                        01
+                    </span>
 
-                <p className="portfolioLabel">
-                <u>Trusted By</u>
-            </p>
-
-                <div className="carouselContainer">
-
-                    <div className="carouselTrack">
-
-                        {duplicatedClients.map((client, index) => (
-                            <a
-                            href={client.website}
-                            key={index}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >
-                            <img
-
-                            src={client.logo}
-                            alt="client Logo"
-                            className="clientLogo"
-                            />
-                </a>
-                        ))}
-
-                    </div>
-
+                    <p className="portfolioLabel">
+                        Trusted By
+                    </p>
                 </div>
 
+                <div className="carouselContainer">
+                    <div className="carouselTrack">
+                        {duplicatedClients.map((client, index) => (
+                            <a
+                                className="clientLogoLink"
+                                href={client.website}
+                                key={index}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src={client.logo}
+                                    alt="Client logo"
+                                    className="clientLogo"
+                                />
+                            </a>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             <div className="showcaseSection">
+                <div className="movingPortfolioSectionHeader">
+                    <span className="movingPortfolioSectionNumber">
+                        02
+                    </span>
 
-                <p className="portfolioLabel">
-                   <u>Worked On</u>
-                </p>
-
-                <div className="showcaseDisplay">
-
-                    <img
-                    key={featuredProjects[activeProject].id}
-                    src={featuredProjects[activeProject].media.heroImage}
-                    alt="Showcase Logos"
-                    className="showcaseLogo"
-                    />
-
+                    <p className="portfolioLabel">
+                        Worked On
+                    </p>
                 </div>
 
-            </div>
+                <div className="showcaseDisplay">
+                    {currentProject?.media?.heroImage ? (
+                        <img
+                            key={currentProject.id}
+                            src={currentProject.media.heroImage}
+                            alt="Showcase project"
+                            className="showcaseLogo"
+                        />
+                    ) : (
+                        <div
+                            className="showcaseFallback"
+                            aria-label="No featured project image available"
+                        >
+                            <span>
+                                {currentProject?.title
+                                    ?.charAt(0)
+                                    .toUpperCase() ?? "J"}
+                            </span>
+                        </div>
+                    )}
 
+                    {currentProject?.title && (
+                        <span className="showcaseProjectTitle">
+                            {currentProject.title}
+                        </span>
+                    )}
+                </div>
+            </div>
         </section>
     );
 }
