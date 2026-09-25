@@ -14,9 +14,9 @@ function Navbar() {
 
                 <div className="navLogoAndName">
 
-                    <NavLink to="/">
+                    {/*<NavLink to="/">*/}
                     <img src={logo} alt="Logo"/>
-                </NavLink>
+                {/*</NavLink>*/}
 
                     <h1><u><strong>Jim Horvath</strong></u></h1>
                 </div>
@@ -24,6 +24,18 @@ function Navbar() {
                 <nav className="navListItems">
                     <ul>
                         <ul>
+
+                            <li>
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) =>
+                                        isActive ? "navLink active" : "navLink"
+                                    }
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+
                             <li>
                                 <NavLink
                                     to="/AboutPage"
