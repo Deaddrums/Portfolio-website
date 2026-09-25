@@ -384,3 +384,28 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 1000px) {
+    .portfolioOverviewGrid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolioOverviewPage {
+        padding: 30px 14px 50px;
+    }
+
+    .portfolioOverviewCard {
+        padding: 20px;
+    }
+
+    .portfolioOverviewTitleRow h1 {
+        gap: 8px;
+    }
+}
+
+.portfolioOverviewCard,
+.portfolioOverviewContainer {
+    min-width: 0;
+}
