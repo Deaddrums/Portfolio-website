@@ -211,23 +211,23 @@ function PortfolioPage() {
                                         </Link>
                                     </div>
 
-                                    <button
-                                        type="button"
-                                        className="portfolioCardToggle"
-                                        onClick={() => toggleExpand(project.id)}
-                                        aria-expanded={isExpanded}
-                                    >
-                                        <span>
-                                            {isExpanded ? "Hide details" : "Show details"}
-                                        </span>
+                                    {/*<button*/}
+                                    {/*    type="button"*/}
+                                    {/*    className="portfolioCardToggle"*/}
+                                    {/*    onClick={() => toggleExpand(project.id)}*/}
+                                    {/*    aria-expanded={isExpanded}*/}
+                                    {/*>*/}
+                                    {/*    <span>*/}
+                                    {/*        {isExpanded ? "Hide details" : "Show details"}*/}
+                                    {/*    </span>*/}
 
-                                        <span
-                                            className="portfolioCardToggleIcon"
-                                            aria-hidden="true"
-                                        >
-                                            ▾
-                                        </span>
-                                    </button>
+                                    {/*    <span*/}
+                                    {/*        className="portfolioCardToggleIcon"*/}
+                                    {/*        aria-hidden="true"*/}
+                                    {/*    >*/}
+                                    {/*        ▾*/}
+                                    {/*    </span>*/}
+                                    {/*</button>*/}
 
                                     <div className="portfolioCardContent">
                                         <div className="portfolioCardContentInner">
