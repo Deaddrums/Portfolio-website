@@ -1,11 +1,13 @@
-
-
 .AboutMeMedOuterContainer {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
 
+    width: 100%;
+
     border-top: 1px solid var(--border);
+
+    overflow-x: hidden;
 }
 
 .aboutMeMedOuterWrapper {
@@ -29,6 +31,8 @@
 
     overflow: hidden;
     isolation: isolate;
+
+    box-sizing: border-box;
 }
 
 /* Subtiel stippenraster, zelfde patroon als
@@ -92,6 +96,8 @@
     gap: 50px;
 
     width: 100%;
+
+    min-width: 0;
 }
 
 .aboutMeMedContainer {
@@ -163,6 +169,8 @@
     line-height: 1.8;
 
     opacity: 0.85;
+
+    overflow-wrap: anywhere;
 }
 
 /* Eerste paragraaf (de quote) krijgt een eigen,
@@ -207,6 +215,8 @@
 
     cursor: pointer;
 
+    box-sizing: border-box;
+
     transition:
             transform 0.2s ease,
             box-shadow 0.2s ease;
@@ -227,12 +237,16 @@
     width: 100%;
     max-width: 340px;
 
+    min-width: 0;
+
     justify-self: center;
 
     border: 2px solid var(--brand-light);
     box-shadow: 8px 8px var(--border);
 
     overflow: hidden;
+
+    box-sizing: border-box;
 }
 
 .aboutMeMedImage {
@@ -278,10 +292,14 @@
     width: 100%;
     max-width: 100%;
 
+    min-width: 0;
+
     background: transparent;
 
     border: none;
     box-shadow: none;
+
+    box-sizing: border-box;
 }
 
 /* =====================================
@@ -299,6 +317,12 @@
         grid-template-columns: minmax(0, 1fr) 280px;
 
         gap: 36px;
+    }
+}
+
+@media (max-width: 900px) {
+    .aboutMeMedOuterWrapper {
+        width: 80%;
     }
 }
 
@@ -341,12 +365,20 @@
 
 @media (max-width: 480px) {
     .aboutMeMedOuterWrapper {
-        width: 100%;
+        width: 92%;
 
         padding: 20px;
     }
 
     .aboutMeMedImageWrapper {
         max-width: 220px;
+    }
+
+    .aboutMeMedContainer h2 {
+        font-size: clamp(2rem, 8vw, 3.2rem);
+    }
+
+    .aboutMeMedContainer p:first-of-type {
+        padding-left: 14px;
     }
 }
