@@ -1194,3 +1194,17 @@
         gap: 20px;
     }
 }
+
+.portfolioItemMainContent,
+.portfolioItemSidebar,
+.portfolioItemContentGrid {
+    min-width: 0;
+}
+
+@media (max-width: 600px) {
+    .portfolioItemDetailsPanel,
+    .portfolioItemTagsPanel,
+    .portfolioItemLinksPanel {
+        width: 100%;
+    }
+}

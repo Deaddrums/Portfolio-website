@@ -4,12 +4,17 @@
     justify-content: center;
     align-items: center;
 
-    width: 83%;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+
     padding: 40px 4vw;
 
-    color: var(--text-color);
+    box-sizing: border-box;
 
+    color: var(--text-color);
 }
+
 
 /* =====================================
    TITLE (two-tone block, no shadow)
@@ -85,13 +90,12 @@
 
 .activeProjectPanel {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
 
     margin-top: 20px;
 
-    width: 90%;
-    min-width: 60%;
-    max-width: 80%;
+    width: 100%;
+    max-width: 1300px;
 
     height: auto;
 
@@ -101,6 +105,13 @@
 
     border: 2px solid var(--brand);
     box-shadow: 10px 10px var(--border);
+
+    box-sizing: border-box;
+}
+
+.activeProjectVisual,
+.activeProjectContent {
+    min-width: 0;
 }
 
 .activeProjectVisual {
@@ -598,6 +609,7 @@
 @media (max-width: 1100px) {
     .activeProjectPanel {
         grid-template-columns: 1fr;
+        width: 100%;
     }
 
     .activeProjectVisual {
@@ -607,7 +619,10 @@
 
 @media (max-width: 800px) {
     .workHighlightsSection {
-        padding: 90px 22px;
+        width: 100%;
+        padding: 60px 20px;
+
+        box-sizing: border-box;
     }
 
     .workHighlightsBrowser {
@@ -620,6 +635,7 @@
 
     .activeProjectVisual {
         min-height: 330px;
+        margin-bottom: 30px;
     }
 
     .activeProjectContent {
@@ -633,6 +649,8 @@
     .workHighlightsTitleAccent,
     .workHighlightsTitleMain {
         padding: 12px 18px;
+
+        font-size: clamp(1.5rem, 7vw, 2.6rem);
     }
 
     .projectThumbnail {
@@ -640,11 +658,39 @@
         width: 110px;
         height: 110px;
     }
+
+    .latestProjectImageWrapper {
+        height: 180px;
+    }
+
+    .activeProjectListBlock ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .activeProjectActions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .projectLink,
+    .autoModeButton,
+    .workHighlightMoveToDetailId {
+        width: 100%;
+    }
 }
 
 @media (max-width: 520px) {
+    .workHighlightsSection {
+        padding: 45px 14px;
+    }
+
     .activeProjectVisual {
         min-height: 280px;
+    }
+
+    .activeProjectImage {
+        max-width: 100%;
     }
 
     .activeProjectOverlay {
@@ -654,9 +700,23 @@
         padding: 16px;
     }
 
+    .activeProjectOverlay h3,
+    .activeProjectContent h3 {
+        font-size: clamp(1.6rem, 8vw, 2.6rem);
+    }
+
     .projectThumbnail {
         flex: 0 0 90px;
         width: 90px;
         height: 90px;
+    }
+
+    .projectImageRailWrapper {
+        max-width: 100%;
+    }
+
+    .activeProjectMeta span,
+    .activeProjectTags span {
+        font-size: 0.68rem;
     }
 }

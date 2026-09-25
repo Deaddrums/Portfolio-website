@@ -5,6 +5,7 @@ import "./PortfolioPage.css";
 
 function PortfolioPage() {
     const [activeCategory, setActiveCategory] = useState("All");
+    const [expandedIds, setExpandedIds] = useState(new Set());
 
     const { items, loading, error } = usePortfolioItems({ onlyPublished: true });
 
@@ -42,6 +43,20 @@ function PortfolioPage() {
             return project.category === category;
         }).length;
     };
+
+    function toggleExpand(projectId) {
+        setExpandedIds((previousIds) => {
+            const nextIds = new Set(previousIds);
+
+            if (nextIds.has(projectId)) {
+                nextIds.delete(projectId);
+            } else {
+                nextIds.add(projectId);
+            }
+
+            return nextIds;
+        });
+    }
 
     if (loading) {
         return (
@@ -126,6 +141,7 @@ function PortfolioPage() {
                             const projectUrl = `/portfolio/${project.slug}`;
                             const heroImage = project.media?.heroImage;
                             const projectRoles = project.whatIDid ?? [];
+                            const isExpanded = expandedIds.has(project.id);
 
                             return (
                                 <article
@@ -133,6 +149,10 @@ function PortfolioPage() {
                                     className={`portfolioCard ${
                                         project.featured
                                             ? "portfolioCardFeatured"
+                                            : ""
+                                    } ${
+                                        isExpanded
+                                            ? "portfolioCardExpanded"
                                             : ""
                                     }`}
                                 >
@@ -150,9 +170,9 @@ function PortfolioPage() {
                                                 />
                                             ) : (
                                                 <div className="portfolioImageFallback">
-            <span>
-                {project.title.charAt(0).toUpperCase()}
-            </span>
+                                                    <span>
+                                                        {project.title.charAt(0).toUpperCase()}
+                                                    </span>
                                                 </div>
                                             )}
 
@@ -182,58 +202,80 @@ function PortfolioPage() {
                                         </div>
                                     </Link>
 
-                                    <div className="portfolioCardContent">
-                                        <div className="portfolioCardMeta">
-                                            <span>{project.category}</span>
-
-                                            {project.clientId && (
-                                                <span>
-                                                    {project.clientId}
-                                                </span>
-                                            )}
-                                        </div>
-
+                                    <div className="portfolioCardHeaderRow">
                                         <Link
                                             to={projectUrl}
                                             className="portfolioCardTitleLink"
                                         >
                                             <h2>{project.title}</h2>
                                         </Link>
+                                    </div>
 
-                                        {project.subtitle && (
-                                            <p className="portfolioCardSubtitle">
-                                                {project.subtitle}
-                                            </p>
-                                        )}
+                                    <button
+                                        type="button"
+                                        className="portfolioCardToggle"
+                                        onClick={() => toggleExpand(project.id)}
+                                        aria-expanded={isExpanded}
+                                    >
+                                        <span>
+                                            {isExpanded ? "Hide details" : "Show details"}
+                                        </span>
 
-                                        {projectRoles.length > 0 && (
-                                            <div className="portfolioCardRoles">
-                                                {projectRoles
-                                                    .slice(0, 3)
-                                                    .map((role, roleIndex) => (
-                                                        <span
-                                                            key={`${project.id}-${role}-${roleIndex}`}
-                                                        >
-                                                            {role}
-                                                        </span>
-                                                    ))}
+                                        <span
+                                            className="portfolioCardToggleIcon"
+                                            aria-hidden="true"
+                                        >
+                                            ▾
+                                        </span>
+                                    </button>
 
-                                                {projectRoles.length > 3 && (
+                                    <div className="portfolioCardContent">
+                                        <div className="portfolioCardContentInner">
+                                            <div className="portfolioCardMeta">
+                                                <span>{project.category}</span>
+
+                                                {project.clientId && (
                                                     <span>
-                                                        +
-                                                        {projectRoles.length - 3}
+                                                        {project.clientId}
                                                     </span>
                                                 )}
                                             </div>
-                                        )}
 
-                                        <Link
-                                            to={projectUrl}
-                                            className="portfolioCardLink"
-                                        >
-                                            <span>Explore project</span>
-                                            <span aria-hidden="true">→</span>
-                                        </Link>
+                                            {project.subtitle && (
+                                                <p className="portfolioCardSubtitle">
+                                                    {project.subtitle}
+                                                </p>
+                                            )}
+
+                                            {projectRoles.length > 0 && (
+                                                <div className="portfolioCardRoles">
+                                                    {projectRoles
+                                                        .slice(0, 3)
+                                                        .map((role, roleIndex) => (
+                                                            <span
+                                                                key={`${project.id}-${role}-${roleIndex}`}
+                                                            >
+                                                                {role}
+                                                            </span>
+                                                        ))}
+
+                                                    {projectRoles.length > 3 && (
+                                                        <span>
+                                                            +
+                                                            {projectRoles.length - 3}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            )}
+
+                                            <Link
+                                                to={projectUrl}
+                                                className="portfolioCardLink"
+                                            >
+                                                <span>Explore project</span>
+                                                <span aria-hidden="true">→</span>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </article>
                             );

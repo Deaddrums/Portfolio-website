@@ -166,20 +166,22 @@ color: var(--background);
     display: grid;
 
     grid-template-columns: repeat(
-        auto-fill,
-        minmax(350px, 450px)
+        auto-fit,
+        minmax(300px, 1fr)
     );
 
-    gap: 30px;
+    gap: 28px;
 
     width: 100%;
-
-    justify-content: start;
+    max-width: 100%;
 }
+
 
 .portfolioCard {
     display: flex;
     flex-direction: column;
+
+    min-width: 0;
 
     background: var(--background);
 
@@ -189,8 +191,11 @@ color: var(--background);
 
     overflow: hidden;
 
-    transition: 0.2s ease;
+    transition:
+            transform 0.2s ease,
+            border-color 0.2s ease;
 }
+
 
 .portfolioCard:hover {
     transform: translateY(-5px);
@@ -324,16 +329,129 @@ color: var(--background);
     font-weight: 700;
 }
 
+/* -------------------------------- */
+/* ALTIJD ZICHTBAAR: titelbalk       */
+/* -------------------------------- */
+
+.portfolioCardHeaderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px 20px;
+
+    min-width: 0;
+}
+
+.portfolioCardHeaderRow h2 {
+    margin: 0;
+
+    min-width: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.3;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* -------------------------------- */
+/* INKLAPBARE DETAILS                */
+/* -------------------------------- */
+
 .portfolioCardContent {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+
+    transition:
+            grid-template-rows 0.35s ease,
+            opacity 0.25s ease;
+}
+
+.portfolioCardContentInner {
     display: flex;
     flex-direction: column;
 
     gap: 12px;
 
-    padding: 20px;
+    min-height: 0;
+    overflow: hidden;
 
-    flex-grow: 1;
+    padding: 0 20px;
 }
+
+.portfolioCard.portfolioCardExpanded .portfolioCardContent {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.portfolioCard.portfolioCardExpanded .portfolioCardContentInner {
+    padding: 0 20px 20px;
+}
+
+/* -------------------------------- */
+/* TOGGLE-KNOP                       */
+/* -------------------------------- */
+
+.portfolioCardToggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+    min-height: 46px;
+
+    padding: 0 16px;
+
+    background: var(--background);
+
+    border: none;
+    border-top: 1px solid var(--brand-light);
+
+    color: var(--text-color);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease;
+}
+
+.portfolioCardToggle:hover {
+    background: var(--brand);
+    color: var(--text-title-color-alternate, #fff);
+}
+
+.portfolioCardToggleIcon {
+    display: inline-flex;
+
+    transition: transform 0.3s ease;
+}
+
+.portfolioCard.portfolioCardExpanded .portfolioCardToggleIcon {
+    transform: rotate(180deg);
+}
+
+
+.portfolioImageContainer,
+.portfolioCardMeta,
+.portfolioCardRoles,
+.portfolioCardLink {
+    min-width: 0;
+}
+
 
 .portfolioCardMeta {
     display: flex;
@@ -384,9 +502,21 @@ color: var(--background);
     text-decoration: none;
 }
 
+@media (max-width: 1000px) {
+    .portfolioPage {
+        padding: 90px 24px 60px;
+    }
+
+    .portfolioElement {
+        padding: 28px;
+    }
+}
+
 @media (max-width: 768px) {
     .portfolioPage {
-        padding: 100px 20px 50px;
+        padding: 80px 16px 50px;
+
+        box-sizing: border-box;
     }
 
     .portfolioElement {
@@ -400,5 +530,26 @@ color: var(--background);
 
     .portfolioGrid {
         grid-template-columns: 1fr;
+    }
+
+    .portfolioCardHeaderRow h2 {
+        white-space: normal;
+    }
+
+    .portfolioFilterButton {
+        flex: 1 1 calc(50% - 12px);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .portfolioTitleContainer {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .portfolioFilterButton {
+        flex: 1 1 100%;
     }
 }
