@@ -1,17 +1,26 @@
 .navOuterWrapper {
-    width: 100%;
+    position: sticky;
 
-    background: linear-gradient(
-            27deg,
-            rgba(7, 159, 224, 0.1) 14%,
-            rgba(253, 29, 29, 0.1) 57%,
-            rgba(252, 176, 69, 0.1) 84%
-    );
+    width: 100%;
+    height: 115px;
+
+    top: 0;
+
+    background: var(--background-navbar);
+    backdrop-filter: blur(10px);
+
+    /*background: #ffffff;*/
+    /*background: linear-gradient(27deg, rgba(255, 255, 255, 1) 35%, rgba(255, 218, 158, 1) 100%);*/
+
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 9999;
+    isolation: isolate;
 }
 
 
 .navInnerWrapper {
-    width: 80%;
+    width: 60%;
     max-width: var(--content-max-width);
 
     margin: 0 auto;
@@ -48,9 +57,7 @@
 
     background: transparent;
 
-    filter:
-            drop-shadow(0 0 8px rgba(7,159,224,.2))
-            drop-shadow(0 0 12px rgba(253,29,29,.15));
+    filter: drop-shadow(0 0 8px rgba(7, 159, 224, .2)) drop-shadow(0 0 12px rgba(253, 29, 29, .15));
 }
 
 .navListItems {
@@ -72,8 +79,12 @@
 }
 
 
+.navListItems ul li:hover {
+    color: var(--brand);
+}
+
 .navButtonWrapper {
-    justify-self: end;
+    justify-self: center;
 }
 
 
@@ -88,9 +99,9 @@
     transition: all 0.3s ease;
 }
 
-.navButton:hover {
-    transform: translateY(-2px);
-}
+/*.navButton:hover {*/
+/*    transform: translateY(-2px);*/
+/*}*/
 
 /* Gradient strip */
 
@@ -104,4 +115,190 @@
             rgba(253, 29, 29, 1) 57%,
             rgba(252, 176, 69, 1) 89%
     );
+}
+
+.navLink {
+    position: relative;
+
+    display: inline-block;
+
+    color: var(--text-color);
+    text-decoration: none;
+
+    font-size: 25px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+
+    text-transform: none;
+}
+
+/* Voorkom paars/blauw gedrag */
+.navLink:link,
+.navLink:visited,
+.navLink:hover,
+.navLink:active {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Verborgen underline */
+.navLink::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--text-color);
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition: transform 0.35s ease;
+}
+
+/* Hover animatie */
+.navLink:hover::after {
+    transform: scaleX(1);
+}
+
+/* Active page behoudt underline */
+.navLink.active::after {
+    transform: scaleX(1);
+}
+
+/* =====================================
+   RESPONSIVE — LARGE DESKTOP (tot 1400px)
+===================================== */
+
+@media (max-width: 1400px) {
+    .navInnerWrapper {
+        width: 85%;
+    }
+}
+
+/* =====================================
+   RESPONSIVE — TABLET (900px – 1200px)
+===================================== */
+
+@media (max-width: 1200px) {
+    .navInnerWrapper {
+        width: 92%;
+    }
+
+    .navListItems ul {
+        gap: 1.4rem;
+    }
+
+    .navListItems ul li,
+    .navLink {
+        font-size: 20px;
+    }
+
+    .navLogoAndName h1 {
+        font-size: calc(var(--font-size-card-title) * 0.85);
+    }
+
+    .navLogoAndName img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* =====================================
+   RESPONSIVE — MOBILE/TABLET (< 900px)
+   Grid wordt verticale flex, alles blijft
+   zichtbaar (geen hamburger beschikbaar).
+===================================== */
+
+@media (max-width: 900px) {
+    .navOuterWrapper {
+        height: auto;
+    }
+
+    .navInnerWrapper {
+        width: 94%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+
+        padding: 16px 0;
+    }
+
+    .navLogoAndName {
+        justify-self: unset;
+    }
+
+    .navListItems {
+        justify-self: unset;
+
+        width: 100%;
+    }
+
+    .navListItems ul {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 1rem 1.6rem;
+    }
+
+    .navButtonWrapper {
+        justify-self: unset;
+
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* =====================================
+   RESPONSIVE — SMALL MOBILE (< 480px)
+===================================== */
+
+@media (max-width: 480px) {
+    .navInnerWrapper {
+        gap: 12px;
+
+        padding: 12px 0;
+    }
+
+    .navLogoAndName {
+        gap: 6px;
+    }
+
+    .navLogoAndName img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .navLogoAndName h1 {
+        font-size: 1.1rem;
+    }
+
+    .navListItems ul {
+        gap: 0.6rem 1.1rem;
+    }
+
+    .navListItems ul li,
+    .navLink {
+        font-size: 16px;
+    }
+
+    .navButton {
+        width: 100%;
+
+        padding: 0.65rem 1rem;
+    }
+
+    .navBackgroundGradient {
+        height: 24px;
+    }
 }

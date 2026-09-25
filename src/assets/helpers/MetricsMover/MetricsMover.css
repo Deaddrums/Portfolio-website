@@ -1,0 +1,41 @@
+.metricMoverOuterWrapper {
+   width: 700px;
+    height: 80px;
+
+    margin-top: 50px;
+
+    /*position: relative;*/
+
+    background: var(--surface-white);
+
+color: var(--text-color);
+
+    /*border: 2px solid var(--border-color);*/
+
+    overflow: hidden;
+}
+
+
+.metricMoverInnerWrapper {
+    display: flex;
+    flex-direction: row;
+
+    /*align-items: stretch;*/
+
+    animation: scrollMetrics 20s linear infinite;
+
+}
+
+
+
+@keyframes scrollMetrics {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}

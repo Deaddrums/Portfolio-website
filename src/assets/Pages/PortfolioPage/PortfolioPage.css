@@ -1,0 +1,404 @@
+.portfolioPageLoadingState,
+.portfolioPageErrorState {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 40vh;
+    width: 100%;
+
+    padding: 40px 20px;
+
+    text-align: center;
+    font-size: 1rem;
+}
+
+.portfolioPageLoadingState {
+    color: var(--text-color);
+}
+
+.portfolioPageErrorState {
+    color: #d1373f;
+    font-weight: 600;
+}
+
+.portfolioPage {
+    width: 100%;
+    padding: 120px 40px 80px;
+    background: var(--background);
+}
+
+.portfolioElement {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+    padding: 40px;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand);
+
+    box-shadow: 10px 10px var(--border);
+}
+
+.portfolioHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.portfolioTitleContainer {
+    display: flex;
+    align-items: stretch;
+
+    border: 2px solid var(--brand);
+
+    box-shadow: 8px 8px var(--border);
+}
+
+.portfolioTitleAccent {
+    display: flex;
+    align-items: center;
+
+    padding: 15px 20px;
+
+    background: var(--brand);
+}
+
+.portfolioTitleAccent h1 {
+    margin: 0;
+
+    color: var(--text-title-color-alternate);
+}
+
+.portfolioTitleSecondary {
+    display: flex;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: var(--background);
+}
+
+.portfolioTitleSecondary h1 {
+    margin: 0;
+}
+
+.portfolioHeaderInfo {
+    max-width: 500px;
+}
+
+.portfolioEyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--brand);
+
+    font-size: 0.8rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.portfolioFilters {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.portfolioFilterButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 16px;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand-light);
+
+    cursor: pointer;
+}
+
+.portfolioFilterButtonActive {
+    background: var(--brand);
+
+    color: var(--text-title-color-alternate);
+
+    border-color: var(--brand);
+}
+
+.portfolioFilterCount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 26px;
+    height: 26px;
+
+    background: var(--brand);
+color: var(--background);
+    font-size: 0.8rem;
+
+}
+
+.portfolioFilterCount:hover {
+    background: var(--background);
+    color: var(--brand);
+}
+
+
+.portfolioResultsBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolioGrid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(350px, 450px)
+    );
+
+    gap: 30px;
+
+    width: 100%;
+
+    justify-content: start;
+}
+
+.portfolioCard {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand-light);
+
+    box-shadow: 8px 8px var(--border);
+
+    overflow: hidden;
+
+    transition: 0.2s ease;
+}
+
+.portfolioCard:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--brand);
+}
+
+.portfolioCardFeatured {
+    border-color: var(--brand);
+}
+
+.portfolioImageLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.portfolioImageContainer {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: var(--brand-pale);
+}
+
+.portfolioImage {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.portfolioCard:hover .portfolioImage {
+    transform: scale(1.05);
+
+    transition: 0.4s ease;
+}
+
+.portfolioImageFallback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--gradient);
+}
+
+.portfolioImageFallback span {
+    color: white;
+
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.portfolioImageOverlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--background);
+    background: rgba(0,0,0,.45);
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+
+    pointer-events: none;
+}
+
+.portfolioCard:hover .portfolioImageOverlay {
+    opacity: 1;
+}
+
+.portfolioArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    background: var(--brand);
+
+    color: white;
+}
+
+.portfolioIndex {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand);
+
+    font-weight: 900;
+}
+
+.portfolioFeaturedLabel {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    padding: 8px 12px;
+
+    background: var(--brand);
+
+    color: white;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.portfolioCardContent {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 20px;
+
+    flex-grow: 1;
+}
+
+.portfolioCardMeta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolioCardTitleLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.portfolioCardTitleLink h2 {
+    margin: 0;
+}
+
+.portfolioCardSubtitle {
+    margin: 0;
+    opacity: 0.7;
+}
+
+.portfolioCardRoles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.portfolioCardRoles span {
+    padding: 6px 10px;
+
+    border: 1px solid var(--brand-light);
+
+    /*background: var(--brand-pale);*/
+
+    font-size: 0.75rem;
+}
+
+.portfolioCardLink {
+    margin-top: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--border);
+
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .portfolioPage {
+        padding: 100px 20px 50px;
+    }
+
+    .portfolioElement {
+        padding: 20px;
+    }
+
+    .portfolioHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+}

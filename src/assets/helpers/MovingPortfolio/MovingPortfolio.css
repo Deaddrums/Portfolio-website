@@ -1,65 +1,120 @@
 .movingPortfolioOuterWrapper {
+    position: relative;
+
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: stretch;
 
-    width: 55.5%;
-    margin: -100px;
+    width: 92%;
+    margin-top: -25px;
+    margin-bottom: 25px;
 
-    border: 2px solid var(--border);
     background: var(--surface-white);
 
-    /*border-top: 1px solid rgba(255,255,255,0.15);*/
-    /*border-bottom: 1px solid rgba(255,255,255,0.15);*/
+    /*border: 2px solid var(--brand-light, var(--brand));*/
+    /*box-shadow: 7px 7px var(--border);*/
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.movingPortfolioOuterWrapper::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+            linear-gradient(
+                    rgba(0, 0, 0, 0.025) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.025) 1px,
+                    transparent 1px
+            );
+
+    background-size: 40px 40px;
+
+    pointer-events: none;
+    z-index: -1;
 }
 
 .carouselSection,
 .showcaseSection {
+    position: relative;
+
     display: flex;
     flex-direction: column;
+
+    min-width: 0;
+}
+
+.carouselSection {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 20px 2rem;
 }
 
 /* =====================================
-   LABELS
+   SECTION HEADER (badge + titel)
 ===================================== */
 
+.movingPortfolioSectionHeader {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 16px;
+
+    margin-bottom: 16px;
+}
+
+.movingPortfolioSectionNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+
+    background: var(--brand);
+    color: var(--text-title-color-alternate, #fff);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
 .portfolioLabel {
-    height: 24px;
+    margin: 0;
 
+    color: var(--text-color, #1a1a1a);
 
-    font-family: var(--font-family-label);
+    font-family: var(--font-family-display, var(--font-family-label));
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.1;
 
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-
-    opacity: 0.6;
+    letter-spacing: normal;
+    text-transform: none;
 }
-
-.portfolioLabel p {
-    border-bottom: 1px solid var(--border) ;
-}
-
-/*.carouselSection .portfolioLabel {*/
-/*    position: absolute;*/
-/*    top: 80%;*/
-/*    left: 21%;*/
-/*}*/
 
 /* =====================================
    CLIENT LOGOS
 ===================================== */
 
-.carouselSection {
-    /*flex: 1;*/
-    /*min-width: 0;*/
-
-    width: 69%;
-    flex: 3;
-
-    margin-left: 10px;
-}
-
 .carouselContainer {
+    min-height: 90px;
+
+    /* Centreert de bewegende logo's verticaal in de
+       resterende ruimte onder de titel, i.p.v. dat ze
+       vastplakken aan de bovenkant. */
+    margin: auto 0;
+
     overflow: hidden;
 
     mask-image: linear-gradient(
@@ -88,12 +143,21 @@
     animation-play-state: paused;
 }
 
+.carouselTrack > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 130px;
+    height: 120px;
+
+    flex: 0 0 auto;
+}
+
 .clientLogo {
     height: 100px;
     width: auto;
-
-    margin-top: 10px;
-    margin-bottom: 5px;
+    max-width: 100%;
 
     object-fit: contain;
 
@@ -103,10 +167,6 @@
 
     transition: all 0.3s ease;
 }
-
-/*.carouselTrack img {*/
-/*    height: 90px;*/
-/*}*/
 
 .clientLogo:hover {
     opacity: 1;
@@ -133,27 +193,26 @@
 ===================================== */
 
 .showcaseSection {
-    width: 140px;
+    width: 250px;
     flex-shrink: 0;
 
-    margin-right: 10px;
-    margin-bottom: 10px;
+    /*padding-left: 15px;*/
 
-
-
+    /*border-left: 2px solid var(--brand-light, var(--border-light));*/
 }
 
 .showcaseDisplay {
-    height: 130px;
+    height: 180px;
+
+    /* Centreert de wisselende portfolio-image verticaal
+       in de resterende ruimte onder de titel. */
+    margin: auto 0;
 
     overflow: hidden;
 
-    margin-top: 5px;
-
-    border-left: 2px solid var(--border-light) ;
-    padding-left: 15px;
-    gap: 10px;
     background: var(--surface-white);
+
+    border: 1px solid var(--brand-light, var(--border-light));
 }
 
 .showcaseLogo {
@@ -164,11 +223,6 @@
 
     animation: fadeProject 4s ease-in-out;
 }
-
-/*.showcaseLogo:hover {*/
-/*    animation-play-state: paused;*/
-/*    scale: 2;*/
-/*}*/
 
 @keyframes fadeProject {
 
@@ -195,6 +249,33 @@
 }
 
 /* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1024px) {
+    .movingPortfolioOuterWrapper {
+        /*width: 70%;*/
+    }
+
+    .carouselTrack > a {
+        width: 110px;
+        height: 82px;
+    }
+
+    .clientLogo {
+        height: 82px;
+    }
+
+    .showcaseSection {
+        width: 130px;
+    }
+
+    .showcaseDisplay {
+        height: 130px;
+    }
+}
+
+/* =====================================
    MOBILE
 ===================================== */
 
@@ -203,13 +284,61 @@
     .movingPortfolioOuterWrapper {
         flex-direction: column;
 
+        width: 100%;
+
         gap: 2rem;
 
         padding: 2rem;
+
+        box-shadow: 5px 5px var(--border);
     }
 
     .showcaseSection {
         width: 100%;
+
+        padding-left: 0;
+        padding-top: 20px;
+
+        border-left: 0;
+        border-top: 2px solid var(--brand-light, var(--border-light));
     }
 
+}
+
+@media (max-width: 480px) {
+
+    .carouselTrack > a {
+        width: 96px;
+        height: 68px;
+    }
+
+    .clientLogo {
+        height: 68px;
+    }
+
+    .showcaseDisplay {
+        height: 150px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    /* verwijder deze regel: width: 70%; */
+
+    .carouselTrack > a {
+        width: 110px;
+        height: 82px;
+    }
+
+    .clientLogo {
+        height: 82px;
+    }
+
+    .showcaseSection {
+        width: 130px;
+    }
+
+    .showcaseDisplay {
+        height: 130px;
+    }
 }

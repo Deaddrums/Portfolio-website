@@ -2,17 +2,32 @@
     width: 100%;
     max-width: var(--content-max-width);
 
-    height: 750px;
-
-    margin: 0 auto;
-
-    padding-left: var(--desktop-margin);
-    padding-right: var(--desktop-margin);
+    margin: 60px auto;
 
     display: flex;
     align-items: center;
+
+    border: 2px solid var(--brand);
+    box-shadow: 10px 10px var(--border);
 }
 
+@media (max-width: 900px) {
+    .heroSection {
+        margin: 40px auto;
+
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        margin: 24px auto;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
 
 /* ======================
    GRID
@@ -20,9 +35,11 @@
 
 .heroGrid {
     width: 100%;
+    min-width: 0;
 
     display: grid;
     grid-template-columns: 7fr 5fr;
+    grid-template-rows: auto auto;
     gap: 4rem;
 
     align-items: center;
@@ -37,13 +54,13 @@
     display: flex;
     flex-direction: column;
 
+    min-width: 0;
+
     gap: 2rem;
 
     padding: 2rem;
 
     background-color: var(--surface-white);
-
-    border: 2px solid var(--border);
 }
 
 
@@ -53,17 +70,10 @@
 
 .heroTag {
     display: flex;
-    *align-items: center;
+    align-items: center;
 
     gap: 1em;
 }
-
-/*.heroTagLine {*/
-/*    width: 5px;*/
-/*    height: 2px;*/
-
-/*    background-color: var(--brand);*/
-/*}*/
 
 .heroTagText {
     font-family: var(--font-family-label);
@@ -133,7 +143,6 @@
     gap: 2rem;
 }
 
-
 .heroButton {
     padding: 1rem 2rem;
 
@@ -144,10 +153,6 @@
     border: 2px solid var(--brand);
 
     transition: 0.3s ease;
-}
-
-.heroButton:hover {
-    transform: translateY(-3px);
 }
 
 
@@ -183,7 +188,19 @@
 
 .heroImageContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+
+    min-width: 0;
+
+    /*gap: 10%;*/
+}
+
+@media (max-width: 900px) {
+    /* ...bestaande regels blijven... */
+
+    .heroImageContainer {
+        justify-content: center;
+    }
 }
 
 .heroImageFrame {
@@ -192,23 +209,37 @@
 
     aspect-ratio: 1;
 
-    /*padding: 1rem;*/
-
-    /*background-color: var(--surface-white);*/
-
-    /*border-radius: 15px;*/
-    /*border: 2px solid var(--border-light);*/
+    padding: 1rem;
 
     overflow: hidden;
-
 }
 
 .heroImageFrame img {
     width: 100%;
     height: 100%;
 
-
     object-fit: contain;
+}
+
+
+/* ======================
+   PORTFOLIO STRIP
+   (MovingPortfolio, spant de volledige
+   breedte van de heroGrid)
+====================== */
+
+.heroPortfolioRow {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.heroPortfolioRow > * {
+    width: 100%;
+    min-width: 0;
 }
 
 
@@ -243,21 +274,90 @@
 
 
 /* ======================
-   MOBILE
+   RESPONSIVE — TABLET (900px – 1200px)
+====================== */
+
+@media (max-width: 1200px) {
+    .heroGrid {
+        gap: 2.5rem;
+    }
+
+    .heroImageFrame {
+        max-width: 380px;
+    }
+}
+
+
+/* ======================
+   RESPONSIVE — MOBILE/TABLET (< 900px)
 ====================== */
 
 @media (max-width: 900px) {
 
+    .heroSection {
+        margin: 16px;
+
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
     .heroGrid {
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+
+        gap: 2rem;
     }
 
     .heroContent {
         order: 2;
+
+        padding: 1.5rem;
     }
 
     .heroImageContainer {
         order: 1;
     }
 
+    .heroPortfolioRow {
+        order: 3;
+    }
+
+    .heroImageFrame {
+        max-width: 320px;
+    }
+
+    .heroTitle {
+        height: auto;
+    }
+}
+
+
+/* ======================
+   RESPONSIVE — SMALL MOBILE (< 480px)
+====================== */
+
+@media (max-width: 480px) {
+
+    .heroSection {
+        margin: 10px;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .heroContent {
+        padding: 1.25rem;
+
+        gap: 1.5rem;
+    }
+
+    .heroActions {
+        flex-wrap: wrap;
+
+        gap: 1rem;
+    }
+
+    .heroImageFrame {
+        max-width: 240px;
+    }
 }

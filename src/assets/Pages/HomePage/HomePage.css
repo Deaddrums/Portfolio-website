@@ -1,0 +1,31 @@
+
+
+.workHighlightsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: var(--content-max-width);
+
+    margin: 60px auto;
+    padding: 40px 4vw;
+
+    color: var(--text-color);
+}
+
+@media (max-width: 800px) {
+    .workHighlightsSection {
+        margin: 40px auto;
+
+        padding: 60px 22px;
+    }
+}
+
+@media (max-width: 520px) {
+    .workHighlightsSection {
+        margin: 24px auto;
+    }
+}
+

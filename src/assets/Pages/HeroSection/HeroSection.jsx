@@ -2,16 +2,14 @@ import './HeroSection.css'
 // import logo from '../../images/clean-logo-transparent.png'
 import jim from '../../images/Jim/80c2d305-8df8-452d-b779-ca9dad64e868.JPG'
 import TitleMover from "../../helpers/TitleMover/TitleMover.jsx";
+import MovingPortfolio from "../../helpers/MovingPortfolio/MovingPortfolio.jsx";
 
 function HeroSection() {
 
-    return <>
-
+    return (
         <section className="heroSection">
 
-
             <div className="heroGrid">
-
 
                 <div className="heroContent">
 
@@ -25,13 +23,9 @@ function HeroSection() {
 
                     </div>
 
-
                     <h1 className="heroTitle">
                         <TitleMover/>
-
-
                     </h1>
-
 
                     <p className="heroDescription">
                         Helping teams, creators and businesses bring
@@ -40,18 +34,12 @@ function HeroSection() {
                         localization and technical solutions.
                     </p>
 
-
                     <div className="heroActions">
-
-                        <button className="heroButton">
-                           <strong>Contact me</strong>
-                        </button>
-
 
                         <div className="heroUSP">
 
                             <span>
-                                20+ Years Experience
+                                20+ Years of kick-ass experience
                             </span>
 
                             <small>
@@ -63,7 +51,6 @@ function HeroSection() {
                     </div>
 
                 </div>
-
 
                 {/* Right Side */}
 
@@ -80,11 +67,16 @@ function HeroSection() {
 
                 </div>
 
+                {/* Full width strip */}
+
+                <div className="heroPortfolioRow">
+                    <MovingPortfolio/>
+                </div>
+
             </div>
 
         </section>
-
-    </>
+    );
 
 }
 
