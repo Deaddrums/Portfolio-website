@@ -1,0 +1,386 @@
+.portfolioOverviewPage {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 80px 50px 120px;
+
+    background: var(--background);
+}
+
+.portfolioOverviewContainer {
+    width: 100%;
+    max-width: var(--content-max-width, 1400px);
+
+    margin: 0 auto;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.portfolioOverviewHeader {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-bottom: 50px;
+}
+
+.portfolioOverviewTitleRow {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+.portfolioOverviewIndexLabel {
+    flex-shrink: 0;
+
+    color: var(--brand);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.portfolioOverviewTitleRow h1 {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin: 0;
+
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    line-height: 1.05;
+}
+
+.portfolioOverviewTitleAccent {
+    color: var(--brand);
+}
+
+.portfolioOverviewTitleMain {
+    color: var(--text-color);
+}
+
+.portfolioOverviewIntro {
+    max-width: 640px;
+
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-size: 1.02rem;
+    line-height: 1.7;
+
+    opacity: 0.8;
+}
+
+.portfolioOverviewEmptyState {
+    padding: 60px 0;
+
+    color: var(--text-color);
+    text-align: center;
+
+    opacity: 0.7;
+}
+
+/* =====================================
+   GRID + CARDS
+===================================== */
+
+.portfolioOverviewGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+
+    gap: 30px;
+}
+
+.portfolioOverviewCard {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    padding: 28px;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand-light);
+    box-shadow: 8px 8px var(--border);
+
+    transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.portfolioOverviewCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 11px 11px var(--border);
+}
+
+.portfolioOverviewCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.portfolioOverviewCardNumber {
+    color: var(--brand);
+
+    font-size: 1.3rem;
+    font-weight: 900;
+
+    opacity: 0.4;
+}
+
+.portfolioOverviewCardMeta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    gap: 8px;
+}
+
+.portfolioOverviewCardCategory {
+    padding: 6px 10px;
+
+    background: var(--background);
+    border: 1px solid var(--brand-light);
+
+    color: var(--text-color);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.portfolioOverviewFeaturedBadge {
+    padding: 6px 10px;
+
+    background: var(--brand);
+    color: var(--text-title-color-alternate, #fff);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.portfolioOverviewCardTitle {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-size: 1.5rem;
+    line-height: 1.15;
+}
+
+.portfolioOverviewCardSubtitle {
+    margin: -8px 0 0;
+
+    color: var(--text-color);
+
+    font-size: 0.92rem;
+    line-height: 1.5;
+
+    opacity: 0.78;
+}
+
+.portfolioOverviewCardRoleBlock {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 12px 14px;
+
+    background: var(--brand-pale, rgba(7, 159, 224, 0.06));
+    border-left: 3px solid var(--brand);
+}
+
+.portfolioOverviewCardRoleLabel {
+    color: var(--brand);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.portfolioOverviewCardRoleValue {
+    color: var(--text-color);
+
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.portfolioOverviewCardDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px 16px;
+
+    margin: 0;
+}
+
+.portfolioOverviewCardDetails dt {
+    color: var(--brand);
+
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.portfolioOverviewCardDetails dd {
+    margin: 2px 0 0;
+
+    color: var(--text-color);
+
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.portfolioOverviewCardResponsibilities {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.portfolioOverviewCardResponsibilities li {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    color: var(--text-color);
+
+    font-size: 0.85rem;
+    line-height: 1.45;
+
+    opacity: 0.88;
+}
+
+.portfolioOverviewCardResponsibilities li span[aria-hidden] {
+    flex-shrink: 0;
+
+    color: var(--brand);
+
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.portfolioOverviewCardTags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.portfolioOverviewCardTags span {
+    padding: 5px 9px;
+
+    background: var(--background);
+    border: 1px solid var(--brand-light);
+
+    color: var(--text-color);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+
+.portfolioOverviewCardLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: auto;
+    padding-top: 14px;
+
+    border-top: 1px solid var(--brand-light);
+
+    color: var(--text-color);
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    transition: color 0.2s ease;
+}
+
+.portfolioOverviewCardLink:hover {
+    color: var(--brand);
+}
+
+/* =====================================
+   LOADING / ERROR STATES
+===================================== */
+
+.portfolioOverviewLoadingState,
+.portfolioOverviewErrorState {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 40vh;
+    width: 100%;
+
+    padding: 40px 20px;
+
+    text-align: center;
+    font-size: 1rem;
+}
+
+.portfolioOverviewLoadingState {
+    color: var(--text-color);
+}
+
+.portfolioOverviewErrorState {
+    color: #d1373f;
+    font-weight: 600;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1200px) {
+    .portfolioOverviewPage {
+        padding: 60px 35px 100px;
+    }
+}
+
+@media (max-width: 720px) {
+    .portfolioOverviewPage {
+        padding: 40px 18px 70px;
+    }
+
+    .portfolioOverviewGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolioOverviewIndexLabel {
+        display: none;
+    }
+
+    .portfolioOverviewCardDetails {
+        grid-template-columns: 1fr;
+    }
+}

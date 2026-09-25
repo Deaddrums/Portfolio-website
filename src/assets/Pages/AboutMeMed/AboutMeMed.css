@@ -1,0 +1,352 @@
+
+
+.AboutMeMedOuterContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    border-top: 1px solid var(--border);
+}
+
+.aboutMeMedOuterWrapper {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 80px;
+
+    gap: 50px;
+
+    width: 60%;
+
+    padding: 60px;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand);
+    box-shadow: 14px 14px var(--border);
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Subtiel stippenraster, zelfde patroon als
+   PortfolioItemContainer::before. */
+.aboutMeMedOuterWrapper::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+            linear-gradient(
+                    rgba(0, 0, 0, 0.025) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.025) 1px,
+                    transparent 1px
+            );
+
+    background-size: 40px 40px;
+
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Vervagende gradient-cirkel in de hoek, zelfde
+   patroon als PortfolioItemContainer::after. */
+.aboutMeMedOuterWrapper::after {
+    content: "";
+
+    position: absolute;
+
+    top: -260px;
+    right: -220px;
+
+    width: 640px;
+    height: 640px;
+
+    background: var(--gradient);
+
+    border-radius: 50%;
+
+    filter: blur(170px);
+    opacity: 0.08;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =====================================
+   TOP: TEXT + IMAGE
+===================================== */
+
+.aboutMeMedInnerWrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+    align-items: center;
+
+    gap: 50px;
+
+    width: 100%;
+}
+
+.aboutMeMedContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    min-width: 0;
+
+    color: var(--text-color);
+}
+
+/* Titelrij met verticaal geroteerd index-label,
+   zelfde principe als .portfolioItemIndexLabel. */
+.aboutMeMedTitleRow {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+.aboutMeMedIndexLabel {
+    flex-shrink: 0;
+
+    color: var(--brand);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.aboutMeMedContainer h2 {
+    margin: 0;
+
+    font-size: clamp(2.4rem, 5.5vw, 5rem);
+    line-height: 1.05;
+
+    background: linear-gradient(
+            90deg,
+            var(--main-blue),
+            var(--main-red),
+            var(--main-orange)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.aboutMeMedContainer h3 {
+    margin: 0;
+
+    color: var(--brand);
+
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    font-weight: 800;
+}
+
+.aboutMeMedContainer p {
+    margin: 0;
+
+    color: var(--text-color);
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    opacity: 0.85;
+}
+
+/* Eerste paragraaf (de quote) krijgt een eigen,
+   nadrukkelijkere behandeling, zelfde idee als
+   .portfolioItemLeadText. */
+.aboutMeMedContainer p:first-of-type {
+    padding-left: 20px;
+
+    border-left: 3px solid var(--brand);
+
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.75;
+
+    opacity: 1;
+}
+
+.aboutMeMedContainer p em {
+    letter-spacing: 2px;
+}
+
+.aboutMeMedNavigateButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    min-height: 54px;
+
+    margin-top: 10px;
+    padding: 0 28px;
+
+    background: var(--brand);
+    color: var(--text-title-color-alternate, #fff);
+
+    border: 2px solid var(--brand);
+    box-shadow: 7px 7px var(--border);
+
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.aboutMeMedNavigateButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 10px 10px var(--border);
+}
+
+/* =====================================
+   IMAGE
+===================================== */
+
+.aboutMeMedImageWrapper {
+    position: relative;
+
+    width: 100%;
+    max-width: 340px;
+
+    justify-self: center;
+
+    border: 2px solid var(--brand-light);
+    box-shadow: 8px 8px var(--border);
+
+    overflow: hidden;
+}
+
+.aboutMeMedImage {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.aboutMeMedImageBadge {
+    position: absolute;
+
+    right: 14px;
+    bottom: 14px;
+
+    padding: 10px 14px;
+
+    background: var(--brand);
+    color: var(--text-title-color-alternate, #fff);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    box-shadow: 4px 4px var(--border);
+}
+
+/* =====================================
+   SERVICES CAROUSEL — samengevoegd tot
+   een doorlopende sectie i.p.v. los kaartje.
+   Eigen border/shadow/achtergrond wordt
+   opgeheven; alleen een bovenrand blijft
+   over als scheiding, zoals secties binnen
+   PortfolioItemContainer van elkaar
+   gescheiden worden.
+===================================== */
+
+.aboutMeMedOuterWrapper .servicesCarousel {
+    width: 100%;
+    max-width: 100%;
+
+    background: transparent;
+
+    border: none;
+    box-shadow: none;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1200px) {
+    .aboutMeMedOuterWrapper {
+        padding: 45px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .aboutMeMedInnerWrapper {
+        grid-template-columns: minmax(0, 1fr) 280px;
+
+        gap: 36px;
+    }
+}
+
+@media (max-width: 800px) {
+    .aboutMeMedOuterWrapper {
+        width: 92%;
+
+        gap: 36px;
+
+        padding: 30px;
+
+        box-shadow: 9px 9px var(--border);
+    }
+
+    .aboutMeMedInnerWrapper {
+        grid-template-columns: 1fr;
+
+        gap: 26px;
+    }
+
+    .aboutMeMedImageWrapper {
+        max-width: 280px;
+
+        justify-self: center;
+        order: -1;
+    }
+
+    .aboutMeMedIndexLabel {
+        display: none;
+    }
+
+    .aboutMeMedNavigateButton {
+        width: 100%;
+    }
+
+    .aboutMeMedOuterWrapper .servicesCarousel {
+        padding-top: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutMeMedOuterWrapper {
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    .aboutMeMedImageWrapper {
+        max-width: 220px;
+    }
+}

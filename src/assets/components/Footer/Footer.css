@@ -1,0 +1,158 @@
+.footerOuterWrapper {
+    position: sticky;
+
+    display: flex;
+    flex-direction: column;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 9999;
+
+}
+
+.footerGradientBar {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 35px;
+
+    gap:100px;
+
+    color: var(--text-title-color-alternate);
+
+    background: linear-gradient(
+            27deg,
+            rgba(7, 159, 224, 1) 14%,
+            rgba(253, 29, 29, 1) 57%,
+            rgba(252, 176, 69, 1) 89%
+    );
+}
+
+.footerGradientBar p {
+    padding-left: 20px;
+    margin-left: 20px;
+
+    font-size: 20px;
+}
+
+.socialMediaIcons {
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+}
+
+.footerSocials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footerDropDownMenu {
+    background: rgb(7 159 224 / 100%);
+
+
+    color: var(--text-title-color-alternate);
+
+    padding: 80px 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    width: 100%;
+}
+
+.footerCreditsContainer {
+    display: grid;
+
+}
+
+.footerCredits {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-left: 40px;
+}
+
+.footerCreditsGrid {
+    display: grid;
+    gap: 12px;
+}
+
+.creditRow {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+
+    margin-left: 50px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.creditName {
+    font-weight: 600;
+    color: white;
+}
+
+.creditRole {
+    color: rgba(255,255,255,0.7);
+}
+
+.footerToggle {
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.footerToggle.open {
+    transform: rotate(90deg);
+}
+
+.footerDropDownMenu {
+    overflow: hidden;
+
+    max-height: 0;
+
+    opacity: 0;
+
+    transition:
+            max-height 0.4s ease,
+            opacity 0.4s ease;
+
+    padding: 0;
+}
+
+.footerDropDownMenu.open {
+    max-height: 1000px;
+
+    opacity: 1;
+
+    padding: 40px;
+}

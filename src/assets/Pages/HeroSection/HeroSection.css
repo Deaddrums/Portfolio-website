@@ -1,21 +1,3 @@
-/*.heroSection {*/
-/*    width: 100%;*/
-/*    max-width: var(--content-max-width);*/
-
-/*    margin: 30px;*/
-
-/*    !*padding-left: var(--desktop-margin);*!*/
-/*    !*padding-right: var(--desktop-margin);*!*/
-/*    !*padding-top: 2rem;*!*/
-/*    !*padding-bottom: 2rem;*!*/
-
-/*    display: flex;*/
-/*    align-items: center;*/
-
-/*    border: 2px solid var(--brand);*/
-/*    box-shadow: 10px 10px var(--border);*/
-/*}*/
-
 .heroSection {
     width: 100%;
     max-width: var(--content-max-width);
@@ -206,11 +188,19 @@
 
 .heroImageContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 
     min-width: 0;
 
     /*gap: 10%;*/
+}
+
+@media (max-width: 900px) {
+    /* ...bestaande regels blijven... */
+
+    .heroImageContainer {
+        justify-content: center;
+    }
 }
 
 .heroImageFrame {

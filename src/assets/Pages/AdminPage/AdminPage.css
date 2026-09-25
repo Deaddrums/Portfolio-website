@@ -1,0 +1,722 @@
+
+.adminPage {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    background: #f4f5f7;
+    color: #1c1c1c;
+
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.adminHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 16px 28px;
+
+    background: #1c1c1c;
+    color: #ffffff;
+}
+
+.adminHeaderLeft {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.adminHeaderBadge {
+    padding: 4px 10px;
+
+    background: var(--brand, #079fe0);
+    color: #ffffff;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.adminHeader h1 {
+    margin: 0;
+
+    font-size: 1.2rem;
+}
+
+.adminHeaderRight {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.adminUserEmail {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.adminLogoutButton {
+    padding: 8px 14px;
+
+    background: transparent;
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.adminLogoutButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* =====================================
+   AUTH STATE (loading / denied)
+===================================== */
+
+.adminAuthState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    min-height: 100vh;
+
+    font-family: system-ui, sans-serif;
+    text-align: center;
+}
+
+/* =====================================
+   TAB BAR
+===================================== */
+
+.adminTabBar {
+    display: flex;
+
+    gap: 4px;
+
+    padding: 0 28px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #dcdfe3;
+}
+
+.adminTabButton {
+    padding: 14px 20px;
+
+    background: transparent;
+    color: #555;
+
+    border: none;
+    border-bottom: 3px solid transparent;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.adminTabButton:hover {
+    color: #1c1c1c;
+}
+
+.adminTabButton.active {
+    color: var(--brand, #079fe0);
+    border-bottom-color: var(--brand, #079fe0);
+}
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.adminContent {
+    flex: 1;
+
+    padding: 28px;
+
+    max-width: 980px;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.adminEditor {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.adminEditorTitle {
+    margin: 0;
+
+    font-size: 1.5rem;
+}
+
+.adminEditorIntro {
+    margin: 0 0 12px;
+
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.adminNoticeBox {
+    padding: 12px 16px;
+
+    margin-bottom: 16px;
+
+    background: #fff8e1;
+    border: 1px solid #f0d98c;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+.adminSection {
+    padding: 18px 20px;
+
+    margin-bottom: 18px;
+
+    background: #ffffff;
+    border: 1px solid #e2e5e9;
+}
+
+.adminSection h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.05rem;
+}
+
+.adminSectionHint {
+    margin: -6px 0 12px;
+
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.adminSubheading {
+    margin: 18px 0 8px;
+
+    font-size: 0.95rem;
+}
+
+/* =====================================
+   FIELDS
+===================================== */
+
+.adminFieldGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+.adminField {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-bottom: 12px;
+}
+
+.adminFieldLabel {
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    color: #333;
+}
+
+.adminFieldHint {
+    color: #888;
+    font-size: 0.75rem;
+}
+
+.adminInput,
+.adminTextarea {
+    padding: 8px 10px;
+
+    background: #ffffff;
+    color: #1c1c1c;
+
+    border: 1px solid #ccd0d5;
+
+    font-size: 0.88rem;
+    font-family: inherit;
+}
+
+.adminInput:focus,
+.adminTextarea:focus {
+    outline: none;
+    border-color: var(--brand, #079fe0);
+}
+
+.adminTextarea {
+    resize: vertical;
+}
+
+.adminCheckboxField {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 0.85rem;
+
+    cursor: pointer;
+}
+
+.adminCheckboxRow {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-bottom: 12px;
+}
+
+/* =====================================
+   TAGS
+===================================== */
+
+.adminTagInputRow {
+    display: flex;
+
+    gap: 8px;
+}
+
+.adminTagInputRow .adminInput {
+    flex: 1;
+}
+
+.adminTagList {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 8px;
+}
+
+.adminTag {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 5px 8px;
+
+    background: #eef2f6;
+
+    font-size: 0.78rem;
+}
+
+.adminTagRemove {
+    background: none;
+    border: none;
+
+    color: #999;
+    font-size: 1rem;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.adminTagRemove:hover {
+    color: #d1373f;
+}
+
+.adminEmptyHint {
+    color: #999;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* =====================================
+   REPEATABLE LIST
+===================================== */
+
+.adminRepeatableList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.adminRepeatableItem {
+    border: 1px solid #e2e5e9;
+    background: #fafbfc;
+}
+
+.adminRepeatableItemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 12px;
+}
+
+.adminRepeatableItemSummary {
+    flex: 1;
+    min-width: 0;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.adminRepeatableItemActions {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+}
+
+.adminRepeatableItemBody {
+    padding: 14px 16px 16px;
+
+    border-top: 1px solid #e2e5e9;
+}
+
+.adminIconButton {
+    width: 26px;
+    height: 26px;
+
+    background: #ffffff;
+    border: 1px solid #ccd0d5;
+
+    font-size: 0.8rem;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.adminIconButton:hover {
+    background: #eef2f6;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.adminSmallButton {
+    padding: 6px 12px;
+
+    background: #ffffff;
+    color: #1c1c1c;
+
+    border: 1px solid #ccd0d5;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.adminSmallButton:hover {
+    border-color: var(--brand, #079fe0);
+    color: var(--brand, #079fe0);
+}
+
+.adminSmallButtonDanger {
+    padding: 6px 12px;
+
+    background: #ffffff;
+    color: #d1373f;
+
+    border: 1px solid #f0b8bc;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.adminSmallButtonDanger:hover {
+    background: #fdecee;
+}
+
+.adminAddButton {
+    align-self: flex-start;
+
+    padding: 9px 16px;
+
+    margin-top: 4px;
+
+    background: #eef2f6;
+    color: var(--brand, #079fe0);
+
+    border: 1px dashed #b8c4cf;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.adminAddButton:hover {
+    background: #e2ecf3;
+}
+
+.adminPrimaryButton {
+    padding: 10px 20px;
+
+    background: var(--brand, #079fe0);
+    color: #ffffff;
+
+    border: none;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.adminPrimaryButton:hover {
+    opacity: 0.9;
+}
+
+.adminSecondaryButton {
+    padding: 10px 20px;
+
+    background: #ffffff;
+    color: #1c1c1c;
+
+    border: 1px solid #ccd0d5;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.adminSecondaryButton:hover {
+    background: #f4f5f7;
+}
+
+/* =====================================
+   EXPORT BAR
+===================================== */
+
+.adminExportBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 24px;
+    padding: 16px 20px;
+
+    background: #1c1c1c;
+    color: #ffffff;
+}
+
+.adminExportInfo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    font-size: 0.8rem;
+}
+
+.adminExportInfo strong {
+    font-size: 0.95rem;
+}
+
+.adminExportButtons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.adminExportStatus {
+    width: 100%;
+
+    color: #9be89b;
+    font-size: 0.8rem;
+}
+
+/* =====================================
+   BLOG COMPOSER
+===================================== */
+
+.adminComposer {
+    padding: 20px;
+
+    background: #ffffff;
+    border: 1px solid #e2e5e9;
+}
+
+.adminComposerActions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 16px;
+}
+
+.adminContentBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================================
+   BLOG OVERVIEW LIST
+===================================== */
+
+.adminBlogOverviewList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.adminBlogOverviewItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 14px 16px;
+
+    background: #ffffff;
+    border: 1px solid #e2e5e9;
+}
+
+.adminBlogOverviewText {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.adminBlogOverviewCategory {
+    color: var(--brand, #079fe0);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.adminBlogOverviewSubtitle {
+    color: #777;
+    font-size: 0.82rem;
+}
+
+.adminBlogOverviewDate {
+    color: #999;
+    font-size: 0.75rem;
+}
+
+.adminBlogOverviewActions {
+    display: flex;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 700px) {
+    .adminHeader {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .adminTabBar {
+        overflow-x: auto;
+    }
+
+    .adminContent {
+        padding: 16px;
+    }
+
+    .adminBlogOverviewItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.adminImagePreviewRow {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 8px;
+}
+
+.adminImagePreview {
+    width: 64px;
+    height: 64px;
+
+    object-fit: cover;
+
+    border: 1px solid #ccd0d5;
+    background: #f4f5f7;
+}
+
+.adminFieldError {
+    color: #d1373f;
+    font-size: 0.78rem;
+}
+
+.adminLoadingState,
+.adminErrorState {
+    padding: 40px 20px;
+
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.adminLoadingState {
+    color: #555;
+}
+
+.adminErrorState {
+    color: #d1373f;
+    font-weight: 600;
+}
+

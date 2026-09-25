@@ -13,11 +13,19 @@ import Footer from "./assets/components/Footer/Footer.jsx";
 import HomePage from "./assets/Pages/HomePage/HomePage.jsx";
 import AboutPage from "./assets/Pages/AboutPage/AboutPage.jsx";
 import PortfolioPage from "./assets/Pages/PortfolioPage/PortfolioPage.jsx";
-import BlogData from "./assets/Data/BlogData.jsx";
+
 
 import {Routes, Route} from "react-router-dom";
 import PortfolioItemContainer from "./assets/components/PortfolioItemContainer/PortfolioItemContainer.jsx";
 import BlogPage from "./assets/Pages/BlogPage/BlogPage.jsx";
+import ProtectedRoute from './auth/ProtectedRoute.jsx'
+import AdminPage from './assets/Pages/AdminPage/AdminPage.jsx'
+
+// TIJDELIJK — alleen nodig voor de eenmalige data-migratie naar
+// Supabase. Verwijder deze import + de bijbehorende route hieronder
+// zodra de migratie succesvol is uitgevoerd.
+// import MigrationRunner from './assets/Pages/AdminPage/MigrationRunner.jsx'
+
 
 function App() {
 
@@ -45,6 +53,28 @@ function App() {
                         element={<PortfolioItemContainer />}
                     />
                     <Route path="/Blog" element={<BlogPage/>}/>
+
+                    <Route
+                        path="/admin"
+                        element={
+                            <ProtectedRoute>
+                                <AdminPage />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    {/* TIJDELIJK — alleen voor de eenmalige Supabase-migratie.
+                        Verwijder deze route zodra de migratie is gelukt. */}
+                    {/*<Route*/}
+                    {/*    path="/run-migration"*/}
+                    {/*    element={*/}
+                    {/*        <ProtectedRoute>*/}
+                    {/*            <MigrationRunner />*/}
+                    {/*        </ProtectedRoute>*/}
+                    {/*    }*/}
+                    {/*/>*/}
+
+
                 </Routes>
 
 

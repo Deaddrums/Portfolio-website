@@ -1,19 +1,17 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import "./MovingPortfolio.css";
 
 import { clientData } from "../../Data/clientData.jsx";
-import { contentData } from "../../Data/contentData.jsx";
+import { usePortfolioItems } from "../../hooks/useSupabaseData.js";
 
 function MovingPortfolio() {
-    const duplicatedClients = useMemo(
-        () => [...clientData, ...clientData],
-        []
-    );
+    const duplicatedClients = clientData.length
+        ? [...clientData, ...clientData]
+        : [];
 
-    const featuredProjects = useMemo(
-        () => contentData.filter((project) => project.featured),
-        []
-    );
+    const { items, loading } = usePortfolioItems({ onlyPublished: true });
+
+    const featuredProjects = items.filter((project) => project.featured);
 
     const [activeProject, setActiveProject] = useState(0);
 
@@ -32,6 +30,10 @@ function MovingPortfolio() {
 
         return () => window.clearInterval(interval);
     }, [featuredProjects.length]);
+
+    if (loading) {
+        return null;
+    }
 
     const currentProject = featuredProjects[activeProject];
 

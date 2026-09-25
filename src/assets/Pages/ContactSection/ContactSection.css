@@ -1,0 +1,170 @@
+.contactOuterWrapper {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 800px;
+    width: 100%;
+}
+
+.contactInnerWrapper {
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.contactInfo {
+    width: 35%;
+}
+
+.contactInfo h1 {
+    font-size: 30px;
+}
+
+.contactInfo h1 span {
+    color: var(--brand-light);
+    font-size: 40px;
+}
+
+.contactForm h3 {
+    background: linear-gradient(
+            90deg,
+            var(--main-blue),
+            var(--main-red),
+            var(--main-orange)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contactForm h4 em {
+    color: var(--brand-light);
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background: var(--surface-white);
+    /*border: 1px solid var(--brand);*/
+    /*box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);*/
+}
+
+.contactForm button {
+    height: 50px;
+    font-size: 20px;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.inputGroup {
+    position: relative;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-grey);
+    padding: 12px 0;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.inputGroup textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+    border-color: var(--brand-light);
+}
+
+.inputGroup label {
+    position: absolute;
+    left: 0;
+    top: -22px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    pointer-events: none;
+    color: var(--text-color);
+}
+
+.contactOptionText {
+    letter-spacing: 500px;
+    color: var(--text-color);
+}
+
+/* Floating label effect */
+
+.inputGroup input:placeholder-shown + label,
+.inputGroup textarea:placeholder-shown + label {
+    top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.inputGroup input:focus + label,
+.inputGroup textarea:focus + label {
+    top: -22px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--brand-light);
+}
+
+.submitButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    background: var(--brand-light);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.submitButton:hover {
+    background: var(--secondary);
+}
+
+.arrow {
+    transition: 0.3s ease;
+}
+
+.submitButton:hover .arrow {
+    transform: translateX(8px);
+}
+
+@media screen and (max-width: 768px) {
+
+    .contactGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .contactForm {
+        padding: 30px;
+    }
+
+}
