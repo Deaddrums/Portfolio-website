@@ -43,16 +43,17 @@ export const drumsData = {
     ],
 
     /* ---------- Roterende foto's ----------
-       src     pad naar de foto (public/drums/...)
+       src     bestandsnaam van de foto (in src/assets/images/Drums/)
        alt     korte beschrijving (voor schermlezers)
        caption tekst op de foto (mag leeg blijven)                          */
     photos: [
-        { src: "src/assets/images/Drums/Versie 5 Grade.00_15_06_03.Still005.jpg.webp", alt: "Jim behind the drum kit", caption: "Behind the kit" },
-        { src: "src/assets/images/Drums/106494015_1451318311714411_5089887790328924265_o.jpg.webp", alt: "Close-up of the snare", caption: "Live" },
-        { src: "src/assets/images/Drums/106505685_1451318478381061_2440719020922473953_o.jpg.webp", alt: "Live on stage", caption: "Live" },
-        { src: "src/assets/images/Drums/Versie 2.00_07_47_13.Still006.jpg.webp", alt: "Recording session", caption: "Focussed plaing" },
-        { src: "src/assets/images/Drums/Versie 4.00_01_38_22.Still004_0.jpg.webp", alt: "Recording session", caption: "Talking about Soultone" },
+        { src: "Versie 5 Grade.00_15_06_03.Still005.jpg.webp", alt: "Jim behind the drum kit", caption: "Behind the kit" },
+        { src: "106494015_1451318311714411_5089887790328924265_o.jpg.webp", alt: "Close-up of the snare", caption: "Live" },
+        { src: "106505685_1451318478381061_2440719020922473953_o.jpg.webp", alt: "Live on stage", caption: "Live" },
+        { src: "Versie 2.00_07_47_13.Still006.jpg.webp", alt: "Recording session", caption: "Focussed plaing" },
+        { src: "Versie 4.00_01_38_22.Still004_0.jpg.webp", alt: "Recording session", caption: "Talking about Soultone" },
     ],
+
 
     /* ---------- Teksten ----------
        Elk blok wordt een eigen sectie. De eerste alinea is de grote
@@ -172,7 +173,7 @@ export const drumsData = {
     endorsements: [
         {
             name: "Soultone cymbals",
-            logo: "src/assets/images/Drums/WhatsApp Image 2026-10-26 at 14.44.27.jpeg",
+            logo: "WhatsApp Image 2026-10-26 at 14.44.27.jpeg",
             since: "2018",
             quote: "",
             description: "Why you play this brand and what you use.",
@@ -180,6 +181,7 @@ export const drumsData = {
             page: "https://www.soultonecymbals.com/artist/jim-horvath",
             url: "https://www.soultonecymbals.com",
         },
+
         // {
         //     name: "Another Brand",
         //     logo: "/drums/brand-2.png",

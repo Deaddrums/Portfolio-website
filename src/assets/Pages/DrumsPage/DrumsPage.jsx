@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { drumsData } from "../../Data/drumsData.jsx";
+import { resolveImage } from "../../helpers/resolveImage.js";
 import "./DrumsPage.css";
 
 /* ==========================================================================
@@ -142,109 +143,6 @@ function getMusicEmbedUrl(track) {
     return url;
 }
 
-function tempoLabel(bpm) {
-    if (bpm < 70) return "Doom territory";
-    if (bpm < 110) return "Slow burn";
-    if (bpm < 150) return "Groove";
-    if (bpm < 200) return "Driving";
-
-    return "Blast-beat territory";
-}
-
-/* ==========================================================================
-   DRUM SOUNDS (Web Audio, geen geluidsbestanden nodig)
-   ========================================================================== */
-
-const PADS = [
-    { id: "kick", label: "Kick", key: "a" },
-    { id: "snare", label: "Snare", key: "s" },
-    { id: "hat", label: "Hi-hat", key: "d" },
-    { id: "tom", label: "Tom", key: "f" },
-    { id: "crash", label: "Crash", key: "g" },
-];
-
-function createNoiseBuffer(context) {
-    const buffer = context.createBuffer(
-        1,
-        context.sampleRate * 2,
-        context.sampleRate
-    );
-    const data = buffer.getChannelData(0);
-
-    for (let i = 0; i < data.length; i += 1) {
-        data[i] = Math.random() * 2 - 1;
-    }
-
-    return buffer;
-}
-
-function triggerSound(context, noiseBuffer, type) {
-    const now = context.currentTime;
-
-    const master = context.createGain();
-    master.gain.value = 0.9;
-    master.connect(context.destination);
-
-    const tone = (fromHz, toHz, duration, volume, wave = "sine") => {
-        const oscillator = context.createOscillator();
-        const gain = context.createGain();
-
-        oscillator.type = wave;
-        oscillator.frequency.setValueAtTime(fromHz, now);
-        oscillator.frequency.exponentialRampToValueAtTime(toHz, now + duration);
-
-        gain.gain.setValueAtTime(volume, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
-
-        oscillator.connect(gain);
-        gain.connect(master);
-
-        oscillator.start(now);
-        oscillator.stop(now + duration);
-    };
-
-    const hiss = (filterType, frequency, duration, volume) => {
-        const source = context.createBufferSource();
-        const filter = context.createBiquadFilter();
-        const gain = context.createGain();
-
-        source.buffer = noiseBuffer;
-        filter.type = filterType;
-        filter.frequency.value = frequency;
-
-        gain.gain.setValueAtTime(volume, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
-
-        source.connect(filter);
-        filter.connect(gain);
-        gain.connect(master);
-
-        source.start(now);
-        source.stop(now + duration);
-    };
-
-    switch (type) {
-        case "kick":
-            tone(150, 40, 0.35, 1);
-            break;
-        case "snare":
-            tone(190, 120, 0.15, 0.5, "triangle");
-            hiss("highpass", 1800, 0.18, 0.7);
-            break;
-        case "hat":
-            hiss("highpass", 7000, 0.06, 0.45);
-            break;
-        case "tom":
-            tone(220, 90, 0.3, 0.9);
-            break;
-        case "crash":
-            hiss("highpass", 3500, 1.2, 0.55);
-            break;
-        default:
-            break;
-    }
-}
-
 /* ==========================================================================
    SMALL COMPONENTS
    ========================================================================== */
@@ -361,7 +259,7 @@ function PhotoCarousel({ photos, interval = 5000 }) {
                         aria-hidden={photoIndex !== index}
                     >
                         <img
-                            src={photo.src}
+                            src={resolveImage(photo.src)}
                             alt={photo.alt || ""}
                             loading={photoIndex === 0 ? "eager" : "lazy"}
                         />
@@ -538,7 +436,7 @@ function EndorsementCard({ item }) {
     const mainHref = item.page || item.url;
 
     const logo = item.logo ? (
-        <img src={item.logo} alt={`${item.name} logo`} loading="lazy" />
+        <img src={resolveImage(item.logo)} alt={`${item.name} logo`} loading="lazy" />
     ) : (
         <span className="drumsLogoFallback" aria-hidden="true">
             {item.name.charAt(0)}
@@ -611,193 +509,6 @@ function EndorsementCard({ item }) {
             </div>
 
         </article>
-    );
-}
-
-/* ---------- Tap tempo ---------- */
-
-function TapTempo() {
-    const tapsRef = useRef([]);
-    const [bpm, setBpm] = useState(null);
-    const [taps, setTaps] = useState(0);
-
-    function handleTap() {
-        const now = performance.now();
-
-        // Taps ouder dan 2,5 seconde tellen niet meer mee: je begint opnieuw.
-        const recent = tapsRef.current.filter((time) => now - time < 2500);
-        recent.push(now);
-        tapsRef.current = recent.slice(-8);
-
-        setTaps(tapsRef.current.length);
-
-        if (tapsRef.current.length >= 2) {
-            const list = tapsRef.current;
-            const average = (list[list.length - 1] - list[0]) / (list.length - 1);
-
-            setBpm(Math.round(60000 / average));
-        }
-    }
-
-    function handleReset() {
-        tapsRef.current = [];
-        setTaps(0);
-        setBpm(null);
-    }
-
-    return (
-        <div className="drumsPanel">
-
-            <div className="drumsPanelHeader">
-                <span>Tap tempo</span>
-            </div>
-
-            <div className="drumsTapBody">
-
-                <div
-                    className={`drumsTapBeat ${bpm ? "live" : ""}`}
-                    style={bpm ? { "--beat": `${60 / bpm}s` } : undefined}
-                    aria-hidden="true"
-                />
-
-                <div className="drumsTapDisplay" aria-live="polite">
-                    <span className="drumsTapValue">{bpm ?? "--"}</span>
-                    <span className="drumsTapUnit">BPM</span>
-                </div>
-
-                <p className="drumsTapLabel">
-                    {bpm
-                        ? tempoLabel(bpm)
-                        : taps === 1
-                            ? "Keep tapping..."
-                            : "Tap along with the beat"}
-                </p>
-
-                <button
-                    type="button"
-                    className="drumsTapButton"
-                    onPointerDown={handleTap}
-                    onClick={(event) => {
-                        // Toetsenbord (Enter/Spatie) geeft een klik zonder pointer.
-                        if (event.detail === 0) {
-                            handleTap();
-                        }
-                    }}
-                >
-                    Tap
-                </button>
-
-                {taps > 0 && (
-                    <button
-                        type="button"
-                        className="drumsTapReset"
-                        onClick={handleReset}
-                    >
-                        Reset
-                    </button>
-                )}
-
-            </div>
-
-        </div>
-    );
-}
-
-/* ---------- Speelbare drumpads ---------- */
-
-function DrumPlayground() {
-    const audioRef = useRef(null);
-    const noiseRef = useRef(null);
-    const [flash, setFlash] = useState({});
-    const [hits, setHits] = useState(0);
-
-    const hit = useCallback((pad) => {
-        if (!audioRef.current) {
-            const AudioContextClass =
-                window.AudioContext || window.webkitAudioContext;
-
-            if (!AudioContextClass) {
-                return;
-            }
-
-            audioRef.current = new AudioContextClass();
-            noiseRef.current = createNoiseBuffer(audioRef.current);
-        }
-
-        const context = audioRef.current;
-
-        if (context.state === "suspended") {
-            context.resume();
-        }
-
-        triggerSound(context, noiseRef.current, pad.id);
-
-        setHits((current) => current + 1);
-        setFlash((current) => ({ ...current, [pad.id]: true }));
-
-        window.setTimeout(() => {
-            setFlash((current) => ({ ...current, [pad.id]: false }));
-        }, 140);
-    }, []);
-
-    // De toetsen werken alleen als de focus in dit blok zit (na een klik),
-    // zodat de rest van de pagina niet per ongeluk geluid maakt.
-    function handleKeyDown(event) {
-        if (event.repeat || event.ctrlKey || event.metaKey || event.altKey) {
-            return;
-        }
-
-        const pad = PADS.find((item) => item.key === event.key.toLowerCase());
-
-        if (pad) {
-            event.preventDefault();
-            hit(pad);
-        }
-    }
-
-    return (
-        <section id="drums-play" className="drumsPlayground">
-
-            <div className="drumsPlaygroundHeader">
-                <span className="drumsEyebrow">Playground</span>
-                <h2>Play the kit</h2>
-                <p>
-                    Tap a pad, or click once and use the keys
-                    {" "}
-                    <strong>A S D F G</strong>.
-                </p>
-            </div>
-
-            <div
-                className="drumsPadGrid"
-                role="group"
-                aria-label="Drum pads"
-                onKeyDown={handleKeyDown}
-            >
-                {PADS.map((pad) => (
-                    <button
-                        key={pad.id}
-                        type="button"
-                        className={`drumsPad ${flash[pad.id] ? "hit" : ""}`}
-                        onPointerDown={() => hit(pad)}
-                        onClick={(event) => {
-                            if (event.detail === 0) {
-                                hit(pad);
-                            }
-                        }}
-                        aria-label={`${pad.label} (key ${pad.key.toUpperCase()})`}
-                    >
-                        <span className="drumsPadKey">{pad.key.toUpperCase()}</span>
-                        <span className="drumsPadName">{pad.label}</span>
-                    </button>
-                ))}
-            </div>
-
-            <div className="drumsHitCounter" aria-live="off">
-                Hits: {hits}
-            </div>
-
-        </section>
     );
 }
 
@@ -887,9 +598,7 @@ function DrumsPage() {
                                 <h1>{hero.title}</h1>
                             </div>
                         </div>
-
-                            <h3><em>{hero.name}</em></h3>
-
+                            <h2>Jim "Deaddrums" Horvath</h2>
                         {hero.subtitle && (
                             <p className="drumsSubtitle">{hero.subtitle}</p>
                         )}
@@ -1002,8 +711,6 @@ function DrumsPage() {
                                 </div>
                             )}
 
-                            {/*{features.tapTempo && <TapTempo />}*/}
-
                             {links.length > 0 && (
                                 <div className="drumsPanel">
 
@@ -1032,6 +739,7 @@ function DrumsPage() {
                     )}
 
                 </div>
+
 
                 {/* ENDORSEMENTS */}
 
