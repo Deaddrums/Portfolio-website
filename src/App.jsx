@@ -21,10 +21,7 @@ import BlogPage from "./assets/Pages/BlogPage/BlogPage.jsx";
 import ProtectedRoute from './auth/ProtectedRoute.jsx'
 import AdminPage from './assets/Pages/AdminPage/AdminPage.jsx'
 
-// TIJDELIJK — alleen nodig voor de eenmalige data-migratie naar
-// Supabase. Verwijder deze import + de bijbehorende route hieronder
-// zodra de migratie succesvol is uitgevoerd.
-// import MigrationRunner from './assets/Pages/AdminPage/MigrationRunner.jsx'
+
 
 
 function App() {
