@@ -44,15 +44,15 @@ function App() {
                 <Routes>
 
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/aboutPage" element={<AboutPage />} />
+                    <Route path="/about" element={<AboutPage />} />
                     {/*<Route path="/services" element={<ServicesPage />} />*/}
-                    <Route path="/PortfolioPage" element={<PortfolioPage />} />
+                    <Route path="/portfolio" element={<PortfolioPage />} />
                     {/*<Route path="/contact" element={<ContactPage />} />*/}
                     <Route
                         path="/portfolio/:slug"
                         element={<PortfolioItemContainer />}
                     />
-                    <Route path="/Blog" element={<BlogPage/>}/>
+                    <Route path="/blog" element={<BlogPage/>}/>
 
                     <Route
                         path="/admin"

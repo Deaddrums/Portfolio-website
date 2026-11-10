@@ -1,13 +1,16 @@
 import jim from './../../images/Jim/Jim in flowers.png'
 import studio from './../../images/Jim/studio.png'
-import { useEffect, useState } from "react";
-import { useCvData } from "../../hooks/useSupabaseData.js";
+import { useEffect, useMemo, useState } from "react";
+import { useCvData, usePortfolioItems } from "../../hooks/useSupabaseData.js";
 import { generateCvPdf } from "../../helpers/generateCvPdf.js";
 import './AboutPage.css'
 
 function AboutPage () {
 
     const { data, loading, error } = useCvData();
+    const { items: portfolioItems, loading: portfolioLoading } = usePortfolioItems({
+        onlyPublished: true
+    });
 
     const [showAll, setShowAll] = useState(false);
     const [isGeneratingCv, setIsGeneratingCv] = useState(false);
@@ -25,6 +28,37 @@ function AboutPage () {
         return () => clearTimeout(timeout);
     }, [cvToast]);
 
+    // De hero-stats komen uit de CV-data (statisch), maar de metric
+    // "Projects delivered" moet het daadwerkelijke, live aantal
+    // gepubliceerde portfolio-items uit Supabase tonen. Hier wordt
+    // die ene stat vervangen, de rest blijft ongewijzigd.
+    const liveHeroStats = useMemo(() => {
+        if (!data?.hero?.stats) {
+            return [];
+        }
+
+        if (portfolioLoading) {
+            return data.hero.stats;
+        }
+
+        const projectCount = portfolioItems.length;
+
+        return data.hero.stats.map((stat) => {
+            const isProjectsStat = stat.label
+                ?.toLowerCase()
+                .includes("projects");
+
+            if (!isProjectsStat) {
+                return stat;
+            }
+
+            return {
+                ...stat,
+                value: `${projectCount}+`
+            };
+        });
+    }, [data, portfolioItems, portfolioLoading]);
+
     async function handleResumeDownload() {
         if (isGeneratingCv || !data) {
             return;
@@ -34,7 +68,7 @@ function AboutPage () {
         setCvToast(null);
 
         try {
-            await generateCvPdf(data);
+            await generateCvPdf(data, portfolioItems);
 
             setCvToast({
                 type: "success",
@@ -163,7 +197,7 @@ function AboutPage () {
 
                     <ul className="heroStats">
 
-                        {data.hero.stats.map((stat, index) => (
+                        {liveHeroStats.map((stat, index) => (
 
                             <li
                                 key={index}
