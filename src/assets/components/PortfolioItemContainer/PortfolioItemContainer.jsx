@@ -266,17 +266,7 @@ function PortfolioItemContainer() {
                             </section>
                         )}
 
-                        {/* =====================================
-                            VIDEOS — meerdere externe video's
-                            (bv. YouTube), netjes onder elkaar.
-
-                            BELANGRIJK: de kritieke afmetingen staan
-                            hier als INLINE styles, zodat de video
-                            altijd correct wordt getoond, ongeacht of
-                            de externe CSS-klasse
-                            (.portfolioItemVideoWrapper) daadwerkelijk
-                            is toegevoegd aan PortfolioItemContainer.css.
-                        ===================================== */}
+                      
 
                         {videoUrls.length > 0 && (
                             <section className="portfolioItemSection portfolioItemVideosSection">

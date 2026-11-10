@@ -13,7 +13,7 @@ import Footer from "./assets/components/Footer/Footer.jsx";
 import HomePage from "./assets/Pages/HomePage/HomePage.jsx";
 import AboutPage from "./assets/Pages/AboutPage/AboutPage.jsx";
 import PortfolioPage from "./assets/Pages/PortfolioPage/PortfolioPage.jsx";
-
+import DrumsPage from "./assets/Pages/DrumsPage/DrumsPage.jsx";
 
 import {Routes, Route} from "react-router-dom";
 import PortfolioItemContainer from "./assets/components/PortfolioItemContainer/PortfolioItemContainer.jsx";
@@ -45,6 +45,7 @@ function App() {
 
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
+                    <Route path="/drums" element={<DrumsPage />} />
                     {/*<Route path="/services" element={<ServicesPage />} />*/}
                     <Route path="/portfolio" element={<PortfolioPage />} />
                     {/*<Route path="/contact" element={<ContactPage />} />*/}

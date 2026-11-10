@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCvData, usePortfolioItems } from "../../hooks/useSupabaseData.js";
 import { generateCvPdf } from "../../helpers/generateCvPdf.js";
 import './AboutPage.css'
+import { resolveImage } from "../../helpers/resolveImage.js";
 
 function AboutPage () {
 
@@ -367,7 +368,7 @@ function AboutPage () {
                                 <div className="valueIconContainer">
 
                                     <img
-                                        src={value.icon}
+                                        src={resolveImage(value.icon)}
                                         alt={value.core}
                                     />
 
