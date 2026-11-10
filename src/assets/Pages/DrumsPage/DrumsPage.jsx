@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { drumsData } from "../../Data/drumsData.jsx";
+import { resolveImage } from "../../helpers/resolveImage.js";
 import "./DrumsPage.css";
 
 /* ==========================================================================
@@ -361,7 +362,7 @@ function PhotoCarousel({ photos, interval = 5000 }) {
                         aria-hidden={photoIndex !== index}
                     >
                         <img
-                            src={photo.src}
+                            src={resolveImage(photo.src)}
                             alt={photo.alt || ""}
                             loading={photoIndex === 0 ? "eager" : "lazy"}
                         />
@@ -538,7 +539,7 @@ function EndorsementCard({ item }) {
     const mainHref = item.page || item.url;
 
     const logo = item.logo ? (
-        <img src={item.logo} alt={`${item.name} logo`} loading="lazy" />
+        <img src={resolveImage(item.logo)} alt={`${item.name} logo`} loading="lazy" />
     ) : (
         <span className="drumsLogoFallback" aria-hidden="true">
             {item.name.charAt(0)}
@@ -888,8 +889,6 @@ function DrumsPage() {
                             </div>
                         </div>
 
-                            <h3><em>{hero.name}</em></h3>
-
                         {hero.subtitle && (
                             <p className="drumsSubtitle">{hero.subtitle}</p>
                         )}
@@ -1002,7 +1001,7 @@ function DrumsPage() {
                                 </div>
                             )}
 
-                            {/*{features.tapTempo && <TapTempo />}*/}
+                            {features.tapTempo && <TapTempo />}
 
                             {links.length > 0 && (
                                 <div className="drumsPanel">
@@ -1032,6 +1031,10 @@ function DrumsPage() {
                     )}
 
                 </div>
+
+                {/* SPEELBARE DRUMPADS */}
+
+                {features.playground && <DrumPlayground />}
 
                 {/* ENDORSEMENTS */}
 
