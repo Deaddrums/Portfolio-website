@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { drumsData } from "../../Data/drumsData.jsx";
 import { resolveImage } from "../../helpers/resolveImage.js";
 import "./DrumsPage.css";
+import ContactLink from "../../helpers/ContactLink/ContactLink.jsx";
 
 /* ==========================================================================
    HELPERS
@@ -761,28 +762,23 @@ function DrumsPage() {
                 )}
 
                 {/* AFSLUITBLOK */}
-
                 {cta && (
                     <footer className="drumsFooter">
-
                         <div>
-                            <span className="drumsEyebrow drumsEyebrowBrand">
-                                {cta.eyebrow}
-                            </span>
+            <span className="drumsEyebrow drumsEyebrowBrand">
+                {cta.eyebrow}
+            </span>
+
                             <h2>{cta.title}</h2>
                         </div>
 
-                        <a
-                            className="drumsButton"
-                            href={cta.href}
-                            {...linkAttrs(cta.href)}
-                        >
+                        <ContactLink className="drumsButton">
                             <span>{cta.buttonLabel}</span>
                             <span aria-hidden="true">→</span>
-                        </a>
-
+                        </ContactLink>
                     </footer>
                 )}
+
 
             </div>
 

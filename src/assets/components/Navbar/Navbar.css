@@ -89,14 +89,56 @@
 
 
 .navButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 0.75rem 1.5rem;
 
     border: 2px solid var(--border-color);
     background: transparent;
 
+    /* Originele tekstkleur behouden */
+    color: var(--text-color);
+
+    /* <a> link styling uitschakelen */
+    text-decoration: none;
+
+    /* Zelfde font als voorheen */
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+
     cursor: pointer;
 
     transition: all 0.3s ease;
+}
+
+/* Voorkom standaard linkkleuren */
+.navButton:link,
+.navButton:visited {
+    color: var(--text-color);
+    background: transparent;
+    text-decoration: none;
+    border-color: var(--border-color);
+}
+
+/* Hover */
+.navButton:hover {
+    color: var(--text-color);
+    background: transparent;
+    border-color: var(--border-color);
+
+    text-decoration: none;
+}
+
+/* Tijdens klikken */
+.navButton:active {
+    color: var(--text-color);
+    background: transparent;
+    border-color: var(--border-color);
+
+    text-decoration: none;
 }
 
 /*.navButton:hover {*/
