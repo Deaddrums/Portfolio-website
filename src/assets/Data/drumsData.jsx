@@ -63,13 +63,26 @@ export const drumsData = {
             title: "How it started",
             paragraphs: [
                 "With a dad who played drums there was little chance of me not playing",
-                "From an early age I really honed in on the drums, and became obsessed during my teens. ",
+                "From an early age I really honed in on the drums, and became obsessed during my teens resulting in joining many bands, playing many shows and even some touring." +
+                "From staring in the underground avant-garde music scene with the funky jazz chaotic metal band Mango Kamikaze "+
+                "to singer songwriter Lauriefish, and even reaching national attention with the Barbeardians."
+                + " And in session work I became a reliable drumming force with fast and solid turnovers resulting with punk-rock sessions, a last minute math-rock sessions, re-creating classics, all along side some legendary musicians",
+                "I would love to have a chat to see how I can help out with your music!"
+                ,
             ],
         },
         {
             title: "How I play",
             paragraphs: [
-                "Describe your style, your influences and what you are working on right now.",
+                "My style, influences and what I'm are working on right now.",
+                "I consider myself more a musical drummer rather to a technical one, following the music and accentuating it in feel and notes by channeling the tonality in the drums and cymbals."
+                + ""
+                ,
+                "There are so many great drummers out there it's difficult to narrow it down,but if I could pick only three it would have to be "
+                + "Tomas Haake; For his super tight mechnical playing while maintaing so much 'hidden' groove. Danny Carey; With his beautiful playing and amazing use of electronics and percussion. And Chris Pennie; with his lightning fast and clean rudiments, and using that in such creative ways."
+                ,
+                "My main practice is currently on rudiments and working on my singles (both hands and feet) for better double bass and blast beats. "
+                ,
             ],
         },
     ],
@@ -92,27 +105,27 @@ export const drumsData = {
         {
             title: "The making of Are you ready?! by the Barbeardians",
             url: "https://youtu.be/2Q5UJ-B-8o4?si=KaskkNfmnDDViK2Z",
-            description: "The behind the scene of Are you ready?!.",
+            description: "",
         },
         {
             title: "The Platters - The great pretender (cover)",
             url: "https://youtu.be/qkA_XGALpQE?si=hBbKM5H1-0DBz9r3",
-            description: "Playing the old classic for a session",
+            description: "",
         },
         {
             title: "Susan Santos - Skin and bones (cover)",
             url: "https://youtu.be/BqvnvesHLWs?si=DTp8yQ64cuHugsEX",
-            description: "Try out for a tour",
+            description: "",
         },
         {
             title: "Kus - gaat los (cover)",
             url: "https://youtu.be/bXWPVEq6f_0?si=yaREG_kyG1lvBWxa",
-            description: "One of the most fun songs I got to play",
+            description: "",
         },
         {
             title: "Yui session - Rompeltierock",
             url: "https://youtu.be/Tz4yWMvvFHU?si=Jjb8W7cFedKrGqnU",
-            description: "Nailing a very difficult song within a day",
+            description: "",
         },
     ],
 

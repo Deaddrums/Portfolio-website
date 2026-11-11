@@ -1,6 +1,7 @@
 import './Navbar.css'
 import logo from './../../images/clean-logo-transparent.png'
 import { NavLink } from "react-router-dom";
+import ContactLink from "../../helpers/ContactLink/ContactLink.jsx";
 
 function Navbar() {
 
@@ -96,10 +97,11 @@ function Navbar() {
                 </nav>
 
                 <div className="navButtonWrapper">
-                    <button className="navButton">
+                    <ContactLink className="navButton">
                         Let's Talk
-                    </button>
+                    </ContactLink>
                 </div>
+
 
             </div>
 
