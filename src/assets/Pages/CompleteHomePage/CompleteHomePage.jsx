@@ -85,12 +85,6 @@ function fillList(list, minimum) {
     return result;
 }
 
-/* ------------------------------------------------------------------ */
-/* MARQUEE                                                             */
-/* Beweegt continu van links naar rechts via requestAnimationFrame.    */
-/* Werkt ook als CSS-animaties door het systeem zijn uitgeschakeld.    */
-/* Pauzeert alleen tijdens hover.                                      */
-/* ------------------------------------------------------------------ */
 
 function Marquee({ children, speed = 40, className = "" }) {
     const trackRef = useRef(null);
@@ -565,7 +559,7 @@ function CompleteHomePage() {
 
                             <div className="homeHeroRow">
                                 <div className="homeHeroRowLabel">
-                                    <span>01</span>
+                                    {/*<span>01</span>*/}
                                     <strong>Trusted by</strong>
                                 </div>
 
@@ -586,7 +580,7 @@ function CompleteHomePage() {
 
                             <div className="homeHeroRow">
                                 <div className="homeHeroRowLabel">
-                                    <span>02</span>
+                                    {/*<span>02</span>*/}
                                     <strong>Worked on</strong>
                                 </div>
 
