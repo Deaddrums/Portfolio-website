@@ -634,10 +634,10 @@ function CompleteHomePage() {
                                     alt={activeProject.title}
                                 />
 
-                                <h2 className="homeWorkBadge">
-                                    <span>Work</span>
-                                    <strong>Highlights</strong>
-                                </h2>
+                                {/*<h2 className="homeWorkBadge">*/}
+                                {/*    <span>Work</span>*/}
+                                {/*    <strong>Highlights</strong>*/}
+                                {/*</h2>*/}
 
                                 <div className="homeProjectCounter">
                                     {String(projectNumber).padStart(2, "0")}
@@ -665,6 +665,7 @@ function CompleteHomePage() {
                             </div>
 
                             <div className="homeProjectContent">
+                                <h1 className="homeProjectBackgroundTitle">Work Highlights</h1>
                                 <span className="homeProjectKicker">Selected project</span>
 
                                 <h3 className="homeProjectTitle">{activeProject.title}</h3>
