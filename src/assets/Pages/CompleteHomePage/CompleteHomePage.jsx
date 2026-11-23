@@ -793,6 +793,7 @@ function CompleteHomePage() {
                         </button>
                     </div>
 
+
                     <div className="homeAboutRightComponent">
                         <div className="homeAboutImage">
                             <img src={jimAbout} alt="Jim working on a production" />
