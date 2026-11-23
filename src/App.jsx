@@ -20,7 +20,7 @@ import PortfolioItemContainer from "./assets/components/PortfolioItemContainer/P
 import BlogPage from "./assets/Pages/BlogPage/BlogPage.jsx";
 import ProtectedRoute from './auth/ProtectedRoute.jsx'
 import AdminPage from './assets/Pages/AdminPage/AdminPage.jsx'
-
+import CompleteHomePage from "./assets/Pages/CompleteHomePage/CompleteHomePage.jsx";
 
 
 
@@ -40,7 +40,8 @@ function App() {
 
                 <Routes>
 
-                    <Route path="/" element={<HomePage />} />
+                    {/*<Route path="/" element={<HomePage />} />*/}
+                    <Route path="/" element={<CompleteHomePage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/drums" element={<DrumsPage />} />
                     {/*<Route path="/services" element={<ServicesPage />} />*/}

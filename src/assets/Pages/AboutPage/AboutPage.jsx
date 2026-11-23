@@ -604,7 +604,11 @@
 // export default AboutPage
 
 import jim from './../../images/Jim/Jim in flowers.png';
-import studio from './../../images/Jim/studio.png';
+import studio1 from './../../images/Jim/studio.png';
+import studio2 from './../../images/Jim/studiopic (3).jpg';
+import studio3 from './../../images/Jim/studiopic (4).jpg';
+import studio4 from './../../images/Jim/studiopic (5).jpg';
+import studio5 from './../../images/Jim/studiopic (6).jpg';
 import { useEffect, useMemo, useState } from "react";
 import { useCvData, usePortfolioItems } from "../../hooks/useSupabaseData.js";
 import { generateCvPdf } from "../../helpers/generateCvPdf.js";
@@ -612,16 +616,23 @@ import { resolveImage } from "../../helpers/resolveImage.js";
 import './AboutPage.css';
 
 const studioImages = [
-    studio,
-    new URL('./../../images/Jim/studio-2.png', import.meta.url).href,
-    new URL('./../../images/Jim/studio-3.png', import.meta.url).href,
-    new URL('./../../images/Jim/studio-4.png', import.meta.url).href
+    studio1,
+    studio2,
+    studio3,
+    studio4,
+    studio5
 ];
+
+const STUDIO_AUTOPLAY_DELAY = 5000;
 
 function SectionTitle({ accent, title, number }) {
     return (
         <div className="aboutSectionHeading">
-            {number && <span className="aboutSectionNumber">{number}</span>}
+            {number && (
+                <span className="aboutSectionNumber">
+                    {number}
+                </span>
+            )}
 
             <div className="aboutSectionTitle">
                 <div className="aboutSectionAccent">
@@ -660,7 +671,10 @@ function SkillGroup({ title, skills }) {
 
 function AboutPage() {
     const { data, loading, error } = useCvData();
-    const { items: portfolioItems, loading: portfolioLoading } = usePortfolioItems({
+    const {
+        items: portfolioItems,
+        loading: portfolioLoading
+    } = usePortfolioItems({
         onlyPublished: true
     });
 
@@ -668,33 +682,33 @@ function AboutPage() {
     const [isGeneratingCv, setIsGeneratingCv] = useState(false);
     const [cvToast, setCvToast] = useState(null);
     const [activeStudioImage, setActiveStudioImage] = useState(0);
-    const [availableStudioImages, setAvailableStudioImages] = useState(studioImages);
+    const [isStudioCarouselPaused, setIsStudioCarouselPaused] = useState(false);
 
     useEffect(() => {
         if (!cvToast) {
             return undefined;
         }
 
-        const timeout = setTimeout(() => {
+        const timeout = window.setTimeout(() => {
             setCvToast(null);
         }, 4000);
 
-        return () => clearTimeout(timeout);
+        return () => window.clearTimeout(timeout);
     }, [cvToast]);
 
     useEffect(() => {
-        if (availableStudioImages.length <= 1) {
+        if (studioImages.length <= 1 || isStudioCarouselPaused) {
             return undefined;
         }
 
-        const interval = setInterval(() => {
+        const interval = window.setInterval(() => {
             setActiveStudioImage((current) =>
-                (current + 1) % availableStudioImages.length
+                (current + 1) % studioImages.length
             );
-        }, 5000);
+        }, STUDIO_AUTOPLAY_DELAY);
 
-        return () => clearInterval(interval);
-    }, [availableStudioImages.length]);
+        return () => window.clearInterval(interval);
+    }, [isStudioCarouselPaused]);
 
     const liveHeroStats = useMemo(() => {
         if (!data?.hero?.stats) {
@@ -750,44 +764,38 @@ function AboutPage() {
         }
     }
 
-    function removeBrokenStudioImage(imageSrc) {
-        setAvailableStudioImages((current) => {
-            const nextImages = current.filter((image) => image !== imageSrc);
-
-            setActiveStudioImage((currentIndex) => {
-                if (nextImages.length === 0) {
-                    return 0;
-                }
-
-                return Math.min(currentIndex, nextImages.length - 1);
-            });
-
-            return nextImages;
-        });
-    }
-
     function showPreviousStudioImage() {
-        if (availableStudioImages.length <= 1) {
-            return;
-        }
-
         setActiveStudioImage((current) =>
-            current === 0 ? availableStudioImages.length - 1 : current - 1
+            current === 0
+                ? studioImages.length - 1
+                : current - 1
         );
     }
 
     function showNextStudioImage() {
-        if (availableStudioImages.length <= 1) {
-            return;
-        }
-
         setActiveStudioImage((current) =>
-            (current + 1) % availableStudioImages.length
+            (current + 1) % studioImages.length
         );
     }
 
+    function handleStudioKeyDown(event) {
+        if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            showPreviousStudioImage();
+        }
+
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
+            showNextStudioImage();
+        }
+    }
+
     if (loading) {
-        return <p className="aboutPageLoadingState">Loading...</p>;
+        return (
+            <p className="aboutPageLoadingState">
+                Loading...
+            </p>
+        );
     }
 
     if (error || !data) {
@@ -814,7 +822,7 @@ function AboutPage() {
                     role="status"
                     aria-live="polite"
                 >
-                    <span className="cvToastIcon">
+                    <span className="cvToastIcon" aria-hidden="true">
                         {cvToast.type === "success" ? "✓" : "!"}
                     </span>
 
@@ -905,7 +913,7 @@ function AboutPage() {
                         <div className="aboutImageWrapper">
                             <img
                                 src={jim}
-                                alt="Portrait"
+                                alt="Portrait of Jim Horvath"
                             />
                         </div>
 
@@ -920,6 +928,7 @@ function AboutPage() {
                                     ? "Generating..."
                                     : "Download resume"}
                             </span>
+
                             <span aria-hidden="true">↓</span>
                         </button>
                     </div>
@@ -955,7 +964,10 @@ function AboutPage() {
                                 key={job.id}
                                 className="experienceCard"
                             >
-                                <div className="experienceIndex">
+                                <div
+                                    className="experienceIndex"
+                                    aria-hidden="true"
+                                >
                                     {String(index + 1).padStart(2, "0")}
                                 </div>
 
@@ -1022,7 +1034,6 @@ function AboutPage() {
                                 </div>
 
                                 <h3>{value.core}</h3>
-
                                 <p>{value.philosophy}</p>
                             </article>
                         ))}
@@ -1032,75 +1043,66 @@ function AboutPage() {
 
             <section className="studioSection">
                 <div className="studioWrapper">
-                    <div className="studioVisualColumn">
-                        <div className="studioCarousel">
+                    <div
+                        className="studioVisualColumn"
+                        onMouseEnter={() => setIsStudioCarouselPaused(true)}
+                        onMouseLeave={() => setIsStudioCarouselPaused(false)}
+                        onFocusCapture={() => setIsStudioCarouselPaused(true)}
+                        onBlurCapture={() => setIsStudioCarouselPaused(false)}
+                    >
+                        <div
+                            className="studioCarousel"
+                            role="region"
+                            aria-roledescription="carousel"
+                            aria-label="Studio images"
+                            tabIndex="0"
+                            onKeyDown={handleStudioKeyDown}
+                        >
                             <div className="studioImageContainer">
-                                {availableStudioImages.map((image, index) => (
+                                {studioImages.map((image, index) => (
                                     <img
                                         key={image}
                                         src={image}
                                         alt={`Studio view ${index + 1}`}
                                         className={`studioSlide ${
-                                            index === activeStudioImage ? "active" : ""
+                                            index === activeStudioImage
+                                                ? "active"
+                                                : ""
                                         }`}
-                                        onError={() => removeBrokenStudioImage(image)}
+                                        aria-hidden={index !== activeStudioImage}
                                     />
                                 ))}
 
-                                {availableStudioImages.length > 0 && (
-                                    <div className="studioCarouselCounter">
-                                        {String(activeStudioImage + 1).padStart(2, "0")}
-                                        <span>/</span>
-                                        {String(availableStudioImages.length).padStart(2, "0")}
-                                    </div>
-                                )}
+                                <div
+                                    className="studioCarouselCounter"
+                                    aria-live="polite"
+                                >
+                                    {String(activeStudioImage + 1).padStart(2, "0")}
+                                    <span>/</span>
+                                    {String(studioImages.length).padStart(2, "0")}
+                                </div>
 
-                                {availableStudioImages.length > 1 && (
-                                    <>
-                                        <button
-                                            type="button"
-                                            className="studioCarouselButton studioCarouselPrev"
-                                            onClick={showPreviousStudioImage}
-                                            aria-label="Previous studio image"
-                                        >
-                                            ‹
-                                        </button>
+                                <button
+                                    type="button"
+                                    className="studioCarouselButton studioCarouselPrev"
+                                    onClick={showPreviousStudioImage}
+                                    aria-label="Show previous studio image"
+                                >
+                                    ‹
+                                </button>
 
-                                        <button
-                                            type="button"
-                                            className="studioCarouselButton studioCarouselNext"
-                                            onClick={showNextStudioImage}
-                                            aria-label="Next studio image"
-                                        >
-                                            ›
-                                        </button>
-                                    </>
-                                )}
+                                <button
+                                    type="button"
+                                    className="studioCarouselButton studioCarouselNext"
+                                    onClick={showNextStudioImage}
+                                    aria-label="Show next studio image"
+                                >
+                                    ›
+                                </button>
 
                                 <span className="studioImageLabel">
-                Eindhoven • NL
-            </span>
-
-                                {availableStudioImages.length > 1 && (
-                                    <div className="studioDots">
-                                        {availableStudioImages.map((image, index) => (
-                                            <button
-                                                key={image}
-                                                type="button"
-                                                className={`studioDot ${
-                                                    index === activeStudioImage ? "active" : ""
-                                                }`}
-                                                onClick={() => setActiveStudioImage(index)}
-                                                aria-label={`Show studio image ${index + 1}`}
-                                                aria-current={
-                                                    index === activeStudioImage
-                                                        ? "true"
-                                                        : undefined
-                                                }
-                                            />
-                                        ))}
-                                    </div>
-                                )}
+                                    Eindhoven • NL
+                                </span>
                             </div>
                         </div>
 
@@ -1114,7 +1116,6 @@ function AboutPage() {
                             <span aria-hidden="true">↗</span>
                         </a>
                     </div>
-
 
                     <div className="studioContent">
                         <span className="studioEyebrow">
@@ -1206,6 +1207,7 @@ function AboutPage() {
 }
 
 export default AboutPage;
+
 
 
 
