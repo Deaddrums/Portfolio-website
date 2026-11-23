@@ -787,7 +787,7 @@ function CompleteHomePage() {
                         <button
                             type="button"
                             className="homePrimaryButton"
-                            onClick={() => navigate("/AboutPage")}
+                            onClick={() => navigate("/About")}
                         >
                             Read complete profile →
                         </button>
