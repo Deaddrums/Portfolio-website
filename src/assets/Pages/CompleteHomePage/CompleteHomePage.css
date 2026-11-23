@@ -498,6 +498,8 @@
     font-weight: 500;
 }
 
+
+
 .homeProjectCounter {
     position: absolute;
 
@@ -572,11 +574,46 @@
     flex-direction: column;
     justify-content: center;
 
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
     gap: 14px;
 
     min-width: 0;
 
     padding: clamp(26px, 3.5vw, 50px);
+}
+
+.homeProjectContent > *:not(.homeProjectBackgroundTitle) {
+    position: relative;
+    z-index: 1;
+}
+
+.homeProjectBackgroundTitle {
+    position: absolute;
+
+    top: 10%;
+    left: 2.04em;
+
+    z-index: 0;
+
+    color: var(--brand);
+
+    font-family: var(--font-family-display);
+    /*font-size: clamp(6rem, 13vw, 13rem);*/
+    font-weight: 900;
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    opacity: 0.06;
+
+    transform: translateY(-50%) rotate(-4deg);
+
+    pointer-events: none;
+    user-select: none;
 }
 
 .homeProjectKicker {

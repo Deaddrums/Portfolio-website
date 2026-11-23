@@ -112,7 +112,7 @@ function PortfolioItemContainer() {
                     aria-label="Portfolio navigation"
                 >
                     <Link
-                        to="/portfolioPage"
+                        to="/portfolio"
                         className="portfolioItemBackLink"
                     >
                         <span aria-hidden="true">←</span>
