@@ -1,1168 +1,3 @@
-/*.aboutHeroSection,*/
-/*.aboutExperienceSection,*/
-/*.aboutValuesSection,*/
-/*.studioSection,*/
-/*.skillsSection {*/
-/*    overflow-x: hidden;*/
-/*}*/
-
-/*.aboutHeroContent,*/
-/*.aboutExperienceWrapper,*/
-/*.aboutValuesWrapper,*/
-/*.studioWrapper,*/
-/*.skillsWrapper {*/
-/*    min-width: 0;*/
-/*}*/
-
-
-/*.aboutHeroSection {*/
-/*    width: 100%;*/
-
-/*    padding: 80px 50px;*/
-
-/*    background: var(--background);*/
-/*}*/
-
-/*.aboutHeroContent {*/
-/*    display: grid;*/
-
-/*    grid-template-columns: 1.3fr 500px;*/
-
-/*    gap: 50px;*/
-
-/*    width: 100%;*/
-/*    max-width: 1500px;*/
-
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.aboutHeroLeft {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    gap: 40px;*/
-/*}*/
-
-/*.aboutTitleContainer {*/
-/*    display: flex;*/
-
-/*    width: fit-content;*/
-
-/*    border: 2px solid var(--brand);*/
-
-/*    box-shadow: 10px 10px var(--border);*/
-/*}*/
-
-/*.aboutJimContainer {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-
-/*    padding: 10px 20px;*/
-
-/*    background: var(--brand);*/
-/*}*/
-
-/*.aboutJim {*/
-/*    margin: 0;*/
-
-/*    color: var(--text-title-color-alternate);*/
-
-/*    font-size: clamp(2.5rem, 5vw, 5rem);*/
-/*}*/
-
-/*.aboutHorvathContainer {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-
-/*    padding: 10px 20px;*/
-
-/*    background: var(--background);*/
-/*}*/
-
-/*.aboutHorvath {*/
-/*    margin: 0;*/
-
-/*    color: var(--text-color);*/
-
-/*    font-size: clamp(2.5rem, 5vw, 5rem);*/
-/*}*/
-
-/*.aboutHeroText {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    gap: 25px;*/
-/*}*/
-
-/*.aboutEyebrow {*/
-/*    color: var(--brand);*/
-
-/*    font-size: 0.8rem;*/
-/*    font-weight: 800;*/
-
-/*    letter-spacing: 0.12em;*/
-
-/*    text-transform: uppercase;*/
-/*}*/
-
-/*.aboutHeroText h2 {*/
-/*    margin: 0;*/
-
-/*    font-size: 2rem;*/
-
-/*    line-height: 1.2;*/
-/*}*/
-
-/*.aboutSummary {*/
-/*    margin: 0;*/
-
-/*    line-height: 1.8;*/
-
-/*    max-width: 900px;*/
-
-/*    opacity: 0.85;*/
-/*}*/
-
-/*.aboutContactBlock {*/
-/*    display: grid;*/
-
-/*    grid-template-columns: repeat(3, 1fr);*/
-
-/*    gap: 20px;*/
-
-/*    padding: 25px;*/
-
-/*    border: 2px solid var(--brand-light);*/
-
-/*    !*background: var(--brand-accent);*!*/
-/*}*/
-
-/*.aboutContactBlock div {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    gap: 5px;*/
-/*}*/
-
-/*.aboutContactBlock strong {*/
-/*    color: var(--brand);*/
-
-/*    font-size: 0.8rem;*/
-
-/*    text-transform: uppercase;*/
-/*}*/
-
-/*.aboutContactBlock a {*/
-/*    color: var(--brand);*/
-
-/*    text-decoration: none;*/
-/*}*/
-
-/*.heroStats {*/
-/*    display: grid;*/
-
-/*    grid-template-columns: repeat(3, 1fr);*/
-
-/*    gap: 20px;*/
-
-/*    list-style: none;*/
-
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
-
-/*.heroStat {*/
-/*    padding: 20px;*/
-
-/*    border: 2px solid var(--brand-light);*/
-
-/*    box-shadow: 6px 6px var(--border);*/
-
-/*    background: var(--background);*/
-/*}*/
-
-/*.heroStatValue {*/
-/*    display: block;*/
-
-/*    color: var(--brand);*/
-
-/*    font-size: 2rem;*/
-/*    font-weight: 800;*/
-/*}*/
-
-/*.heroStatLabel {*/
-/*    display: block;*/
-
-/*    margin-top: 6px;*/
-
-/*    opacity: 0.75;*/
-/*}*/
-
-/*.aboutHeroRight {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    height: 750px;*/
-/*    width: 500px;*/
-
-/*    background: var(--background);*/
-
-/*    border: 2px solid var(--brand);*/
-
-/*    box-shadow: 10px 10px var(--border);*/
-
-/*    overflow: hidden;*/
-/*}*/
-
-/*.aboutImageWrapper {*/
-/*    height: 700px;*/
-
-/*    overflow: hidden;*/
-
-/*    border: 2px solid var(--brand);*/
-
-
-/*}*/
-
-/*.aboutImageWrapper img {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-
-/*    object-fit: cover;*/
-/*}*/
-
-/*.resumeButton {*/
-/*    height: 60px;*/
-
-/*    border: 2px solid var(--brand);*/
-
-/*    border-top: none;*/
-
-/*    background: var(--background);*/
-
-/*    color: var(--text-color);*/
-
-/*    font-size: 1rem;*/
-/*    font-weight: 700;*/
-
-/*    cursor: pointer;*/
-/*}*/
-
-/*.resumeButton:hover {*/
-/*    background: var(--brand);*/
-/*    color: var(--background);*/
-/*}*/
-
-/*@media (max-width: 1200px) {*/
-
-/*    .aboutHeroContent {*/
-/*        grid-template-columns: 1fr;*/
-/*    }*/
-
-/*    .aboutHeroRight {*/
-/*        width: 100%;*/
-/*        max-width: 500px;*/
-/*        height: auto;*/
-/*    }*/
-
-/*    .aboutImageWrapper {*/
-/*        height: 500px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 600px) {*/
-
-/*    .aboutHeroRight {*/
-/*        max-width: 100%;*/
-/*    }*/
-
-/*    .aboutImageWrapper {*/
-/*        height: 380px;*/
-/*    }*/
-
-/*    .resumeButton {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
-
-
-/*@media (max-width: 1000px) {*/
-
-/*    .aboutContactBlock {*/
-/*        grid-template-columns: repeat(2, 1fr);*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 768px) {*/
-
-/*    .heroStats {*/
-/*        grid-template-columns: repeat(2, 1fr);*/
-/*    }*/
-
-/*    .aboutContactBlock {*/
-/*        grid-template-columns: 1fr;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 480px) {*/
-
-/*    .heroStats {*/
-/*        grid-template-columns: 1fr;*/
-/*    }*/
-/*}*/
-
-
-/*!*WORK EXPERIENCE*!*/
-
-/*.aboutExperienceSection {*/
-/*    width: 100%;*/
-
-/*    padding: 100px 50px;*/
-
-/*    background: rgba(7, 159, 224, 0.04);*/
-/*}*/
-
-/*.aboutExperienceWrapper {*/
-/*    width: 100%;*/
-/*    max-width: 1500px;*/
-
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.aboutSectionHeader {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-
-/*    gap: 30px;*/
-
-/*    margin-bottom: 50px;*/
-/*}*/
-
-/*.aboutSectionTitle {*/
-/*    display: flex;*/
-
-/*    width: fit-content;*/
-
-/*    border: 2px solid var(--brand);*/
-
-/*    box-shadow: 10px 10px var(--border);*/
-/*}*/
-
-/*.aboutSectionAccent {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-
-/*    padding: 10px 20px;*/
-
-/*    background: var(--brand);*/
-/*}*/
-
-/*.aboutSectionAccent h2 {*/
-/*    margin: 0;*/
-
-/*    color: var(--text-title-color-alternate);*/
-/*}*/
-
-/*.aboutSectionSecondary {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-
-/*    padding: 10px 20px;*/
-
-/*    background: var(--background);*/
-/*}*/
-
-/*.aboutSectionSecondary h2 {*/
-/*    margin: 0;*/
-/*}*/
-
-/*.experienceGrid {*/
-/*    display: grid;*/
-
-/*    grid-template-columns:*/
-/*        repeat(3, minmax(0, 1fr));*/
-
-/*    gap: 30px;*/
-/*}*/
-
-/*.experienceCard {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    gap: 18px;*/
-
-/*    !*width: 70%;*!*/
-
-/*    padding: 28px;*/
-
-/*    background: var(--background);*/
-
-/*    border: 2px solid var(--brand-light);*/
-
-/*    box-shadow: 8px 8px var(--border);*/
-
-/*    transition: all .2s ease;*/
-/*}*/
-
-/*.experienceCard:hover {*/
-/*    transform: translateY(-4px);*/
-
-/*    border-color: var(--brand);*/
-/*}*/
-
-/*.experienceCardTop {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-
-/*    gap: 20px;*/
-/*}*/
-
-/*.experienceCompany {*/
-/*    color: var(--brand);*/
-
-/*    font-weight: 700;*/
-/*}*/
-
-/*.experiencePeriod {*/
-/*    opacity: .6;*/
-/*}*/
-
-/*.experienceCard h3 {*/
-/*    margin: 0;*/
-
-/*    font-size: 1.4rem;*/
-/*}*/
-
-/*.experienceLocation {*/
-/*    margin: 0;*/
-
-/*    opacity: .7;*/
-/*}*/
-
-/*.experienceHighlights {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    gap: 10px;*/
-
-/*    margin: 0;*/
-/*    padding-left: 20px;*/
-/*}*/
-
-/*.experienceHighlights li {*/
-/*    line-height: 1.6;*/
-/*}*/
-
-/*.showMoreButton {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-
-/*    height: 40px;*/
-
-/*    padding: 0 24px;*/
-
-/*    background: var(--background);*/
-
-/*    color: var(--text-color);*/
-
-/*    border: 2px solid var(--brand);*/
-/*    box-shadow: 6px 6px var(--border);*/
-
-/*    font-size: 0.95rem;*/
-/*    font-weight: 600;*/
-
-/*    cursor: pointer;*/
-
-
-
-/*    transition: all 0.2s ease;*/
-/*}*/
-
-/*.showMoreButton:hover {*/
-/*    background: var(--brand);*/
-
-/*    color: white;*/
-/*}*/
-
-/*!*VALUES*!*/
-
-/*.aboutValuesSection {*/
-/*    width: 100%;*/
-
-/*    padding: 120px 50px;*/
-
-/*    background: rgba(253, 29, 29, 0.02);*/
-/*}*/
-
-/*.aboutValuesWrapper {*/
-/*    width: 100%;*/
-/*    max-width: 1400px;*/
-
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.valuesIntro {*/
-/*    margin-top: 50px;*/
-/*    margin-bottom: 70px;*/
-/*}*/
-
-/*.valuesIntro p {*/
-/*    max-width: 700px;*/
-
-/*    margin: 0;*/
-
-/*    font-size: 1.25rem;*/
-/*    line-height: 1.8;*/
-
-/*    opacity: 0.85;*/
-/*}*/
-
-/*.valuesList {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
-
-/*.valueRow {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    gap: 25px;*/
-
-/*    padding: 45px 0;*/
-
-/*    border-bottom: 1px solid var(--brand-light);*/
-/*}*/
-
-/*.valueRow:first-child {*/
-/*    border-top: 1px solid var(--brand-light);*/
-/*}*/
-
-/*.valueRowHeader {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-
-/*    gap: 25px;*/
-/*}*/
-
-/*.valueIconContainer {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-
-/*    width: 70px;*/
-/*    height: 70px;*/
-
-/*    flex-shrink: 0;*/
-
-/*    border: 2px solid var(--brand-light);*/
-
-/*    background: var(--background);*/
-/*}*/
-
-/*.valueIconContainer img {*/
-/*    width: 36px;*/
-/*    height: 36px;*/
-
-/*    object-fit: contain;*/
-/*}*/
-
-/*.valueTitleContainer {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    gap: 8px;*/
-/*}*/
-
-/*.valueNumber {*/
-/*    color: var(--brand);*/
-
-/*    font-size: 0.75rem;*/
-/*    font-weight: 800;*/
-
-/*    letter-spacing: 0.15em;*/
-
-/*    text-transform: uppercase;*/
-/*}*/
-
-/*.valueTitleContainer h3 {*/
-/*    margin: 0;*/
-
-/*    font-size: clamp(1.6rem, 3vw, 2.5rem);*/
-/*    font-weight: 700;*/
-/*}*/
-
-/*.valueRow p {*/
-/*    max-width: 900px;*/
-
-/*    margin: 0 0 0 95px;*/
-
-/*    font-size: 1.05rem;*/
-/*    line-height: 1.9;*/
-
-/*    opacity: 0.85;*/
-/*}*/
-
-/*!*STUDIO PLUG*!*/
-
-/*.studioSection {*/
-/*    width: 100%;*/
-
-/*    padding: 120px 50px;*/
-
-/*    background: rgba(252, 176, 69, 0.03);*/
-/*}*/
-
-/*.studioWrapper {*/
-/*    display: grid;*/
-
-/*    grid-template-columns:*/
-/*        minmax(500px, 1.05fr)*/
-/*        minmax(400px, .95fr);*/
-
-/*    gap: 50px;*/
-
-/*    width: 100%;*/
-/*    max-width: 1500px;*/
-
-/*    margin: 0 auto;*/
-/*}*/
-
-
-
-/*.studioImageContainer {*/
-/*    overflow: hidden;*/
-
-/*    border: 2px solid var(--brand);*/
-
-/*    box-shadow: 10px 10px var(--border);*/
-/*}*/
-
-/*.studioImageContainer img {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-
-/*    display: block;*/
-
-/*    object-fit: cover;*/
-
-/*    transition: transform .4s ease;*/
-/*}*/
-
-/*.studioImageContainer:hover img {*/
-/*    transform: scale(1.03);*/
-/*}*/
-
-/*.studioContent {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-
-/*    gap: 24px;*/
-/*}*/
-
-/*.studioEyebrow {*/
-/*    color: var(--brand);*/
-
-/*    font-size: .8rem;*/
-/*    font-weight: 800;*/
-
-/*    letter-spacing: .15em;*/
-
-/*    text-transform: uppercase;*/
-/*}*/
-
-/*.studioContent h2 {*/
-/*    margin: 0;*/
-
-/*    font-size: clamp(2rem, 4vw, 4rem);*/
-
-/*    line-height: 1.05;*/
-/*}*/
-
-/*.studioContent p {*/
-/*    margin: 0;*/
-
-/*    line-height: 1.8;*/
-
-/*    opacity: .82;*/
-/*}*/
-
-/*.studioStats {*/
-/*    display: flex;*/
-
-/*    gap: 25px;*/
-
-/*    margin-top: 10px;*/
-/*}*/
-
-/*.studioStat {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-
-/*    gap: 4px;*/
-/*}*/
-
-/*.studioStat span {*/
-/*    color: var(--brand);*/
-
-/*    font-size: 2rem;*/
-/*    font-weight: 800;*/
-/*}*/
-
-/*.studioStat small {*/
-/*    opacity: .75;*/
-/*}*/
-
-/*.studioButton {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-
-/*    width: fit-content;*/
-
-/*    min-width: 220px;*/
-/*    height: 56px;*/
-
-/*    margin-top: 20px;*/
-
-/*    padding: 0 30px;*/
-
-/*    background: var(--brand);*/
-
-/*    color: var(--text-title-color-alternate);*/
-
-/*    border: 2px solid var(--brand);*/
-
-/*    box-shadow: 8px 8px var(--border);*/
-
-/*    text-decoration: none;*/
-
-/*    font-weight: 700;*/
-
-/*    transition:*/
-/*            transform .2s ease,*/
-/*            box-shadow .2s ease;*/
-/*}*/
-
-/*.studioButton:hover {*/
-/*    transform: translateY(-3px);*/
-
-/*    box-shadow: 10px 10px var(--border);*/
-/*}*/
-
-/*@media (max-width: 1100px) {*/
-
-/*    .studioWrapper {*/
-/*        grid-template-columns: 1fr;*/
-/*    }*/
-
-/*    .studioImageContainer {*/
-/*        max-height: 600px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 768px) {*/
-
-/*    .studioSection {*/
-/*        padding: 80px 20px;*/
-/*    }*/
-
-/*    .studioStats {*/
-/*        flex-wrap: wrap;*/
-/*    }*/
-/*}*/
-
-/*!*SKILLS*!*/
-
-/*.skillsSection {*/
-/*    width: 100%;*/
-
-/*    padding: 120px 50px;*/
-
-/*    background: rgba(7, 159, 224, 0.025);*/
-/*}*/
-
-/*.skillsWrapper {*/
-/*    width: 100%;*/
-/*    max-width: 1500px;*/
-
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.skillsIntro {*/
-/*    max-width: 750px;*/
-
-/*    margin-top: 50px;*/
-/*    margin-bottom: 80px;*/
-/*}*/
-
-/*.skillsIntro p {*/
-/*    margin: 0;*/
-
-/*    line-height: 1.9;*/
-
-/*    font-size: 1.1rem;*/
-
-/*    opacity: 0.85;*/
-/*}*/
-
-/*!* ================================= *!*/
-/*!* SKILL GROUP                       *!*/
-/*!* ================================= *!*/
-
-/*.skillGroup {*/
-/*    padding: 50px 0;*/
-
-/*    border-top: 1px solid var(--brand-light);*/
-/*}*/
-
-/*.skillGroup:last-child {*/
-/*    border-bottom: 1px solid var(--brand-light);*/
-/*}*/
-
-/*.skillGroupHeader {*/
-/*    margin-bottom: 35px;*/
-/*}*/
-
-/*.skillGroupHeader h3 {*/
-/*    margin: 0;*/
-
-/*    font-size: clamp(1.4rem, 3vw, 2rem);*/
-
-/*    font-weight: 700;*/
-/*}*/
-
-/*!* ================================= *!*/
-/*!* SKILLS                            *!*/
-/*!* ================================= *!*/
-
-/*.skillList {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-
-/*    gap: 14px;*/
-
-/*    padding: 0;*/
-/*    margin: 0;*/
-
-/*    list-style: none;*/
-/*}*/
-
-/*.skillTag {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-
-/*    min-height: 44px;*/
-
-/*    padding: 0 18px;*/
-
-/*    background: var(--background);*/
-
-/*    border: 2px solid var(--brand-light);*/
-
-/*    box-shadow: 4px 4px var(--border);*/
-
-/*    font-size: 0.9rem;*/
-/*    font-weight: 600;*/
-
-/*    transition:*/
-/*            transform .2s ease,*/
-/*            border-color .2s ease;*/
-/*}*/
-
-/*.skillTag:hover {*/
-/*    transform: translateY(-2px);*/
-
-/*    border-color: var(--brand);*/
-/*}*/
-
-/*!* ================================= *!*/
-/*!* MOBILE                            *!*/
-/*!* ================================= *!*/
-
-/*@media (max-width: 768px) {*/
-
-/*    .skillsSection {*/
-/*        padding: 90px 20px;*/
-/*    }*/
-
-/*    .skillTag {*/
-/*        width: 100%;*/
-
-/*        justify-content: center;*/
-/*    }*/
-/*}*/
-
-/*.experienceGrid {*/
-/*    position: relative;*/
-/*}*/
-
-/*.experienceGrid::before {*/
-/*    content: "";*/
-
-/*    position: absolute;*/
-
-/*    top: 0;*/
-/*    bottom: 0;*/
-/*    left: -40px;*/
-
-/*    width: 2px;*/
-
-/*    background: linear-gradient(*/
-/*            to bottom,*/
-/*            var(--brand),*/
-/*            transparent*/
-/*    );*/
-
-/*    opacity: .3;*/
-/*}*/
-
-
-/*!* =====================================*/
-/*   CV DOWNLOAD TOAST*/
-/*===================================== *!*/
-
-/*.cvToast {*/
-/*    position: fixed;*/
-
-/*    right: 24px;*/
-/*    bottom: 24px;*/
-/*    z-index: 10000;*/
-
-/*    display: flex;*/
-/*    align-items: center;*/
-
-/*    gap: 12px;*/
-
-/*    max-width: 380px;*/
-
-/*    padding: 16px 18px;*/
-
-/*    background: var(--background);*/
-
-/*    border: 2px solid var(--brand);*/
-/*    box-shadow: 7px 7px var(--border);*/
-
-/*    animation: cvToastSlideIn 0.3s ease;*/
-/*}*/
-
-/*@keyframes cvToastSlideIn {*/
-/*    from {*/
-/*        opacity: 0;*/
-/*        transform: translateY(16px);*/
-/*    }*/
-
-/*    to {*/
-/*        opacity: 1;*/
-/*        transform: translateY(0);*/
-/*    }*/
-/*}*/
-
-/*.cvToastIcon {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    flex-shrink: 0;*/
-
-/*    width: 26px;*/
-/*    height: 26px;*/
-
-/*    color: var(--text-title-color-alternate, #fff);*/
-
-/*    font-size: 0.9rem;*/
-/*    font-weight: 800;*/
-/*    line-height: 1;*/
-/*}*/
-
-/*.cvToastMessage {*/
-/*    flex: 1;*/
-/*    min-width: 0;*/
-
-/*    color: var(--text-color);*/
-
-/*    font-size: 0.88rem;*/
-/*    font-weight: 600;*/
-/*    line-height: 1.4;*/
-/*}*/
-
-/*.cvToastClose {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    flex-shrink: 0;*/
-
-/*    width: 22px;*/
-/*    height: 22px;*/
-
-/*    background: transparent;*/
-/*    color: var(--text-color);*/
-
-/*    border: none;*/
-
-/*    font-size: 1.1rem;*/
-/*    line-height: 1;*/
-
-/*    cursor: pointer;*/
-
-/*    opacity: 0.6;*/
-
-/*    transition: opacity 0.2s ease;*/
-/*}*/
-
-/*.cvToastClose:hover {*/
-/*    opacity: 1;*/
-/*}*/
-
-/*!* Succes: brand-kleur, zoals je andere positieve/primaire accenten *!*/
-/*.cvToastSuccess {*/
-/*    border-color: var(--brand);*/
-/*}*/
-
-/*.cvToastSuccess .cvToastIcon {*/
-/*    background: var(--brand);*/
-/*}*/
-
-/*!* Fout: rode variant, herkenbaar als foutmelding zonder van*/
-/*   de scherpe/harde stijl van de site af te wijken *!*/
-/*.cvToastError {*/
-/*    border-color: #d1373f;*/
-/*    box-shadow: 7px 7px rgba(209, 55, 63, 0.35);*/
-/*}*/
-
-/*.cvToastError .cvToastIcon {*/
-/*    background: #d1373f;*/
-/*}*/
-
-/*!* =====================================*/
-/*   RESPONSIVE*/
-/*===================================== *!*/
-
-/*@media (max-width: 600px) {*/
-/*    .cvToast {*/
-/*        right: 12px;*/
-/*        bottom: 12px;*/
-/*        left: 12px;*/
-
-/*        max-width: none;*/
-/*    }*/
-/*}*/
-
-/*.aboutPageLoadingState {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-
-/*    min-height: 40vh;*/
-/*    width: 100%;*/
-
-/*    padding: 40px 20px;*/
-
-/*    color: var(--text-color);*/
-/*    font-size: 1rem;*/
-/*    text-align: center;*/
-/*}*/
-
-/*@media (max-width: 900px) {*/
-
-/*    .aboutHeroSection,*/
-/*    .aboutExperienceSection,*/
-/*    .aboutValuesSection {*/
-/*        padding: 60px 24px;*/
-
-/*        box-sizing: border-box;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 480px) {*/
-
-/*    .aboutHeroSection,*/
-/*    .aboutExperienceSection,*/
-/*    .aboutValuesSection {*/
-/*        padding: 45px 16px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 1100px) {*/
-
-/*    .experienceGrid {*/
-/*        grid-template-columns: repeat(2, minmax(0, 1fr));*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 700px) {*/
-
-/*    .experienceGrid {*/
-/*        grid-template-columns: 1fr;*/
-/*    }*/
-
-/*    .experienceGrid::before {*/
-/*        display: none;*/
-/*    }*/
-
-/*    .aboutSectionHeader {*/
-/*        flex-direction: column;*/
-/*        align-items: flex-start;*/
-
-/*        gap: 20px;*/
-/*    }*/
-
-/*    .experienceCard {*/
-/*        padding: 22px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 768px) {*/
-
-/*    .aboutValuesSection {*/
-/*        padding-top: 60px;*/
-/*        padding-bottom: 60px;*/
-/*    }*/
-
-/*    .valueRowHeader {*/
-/*        gap: 16px;*/
-/*    }*/
-
-/*    .valueIconContainer {*/
-/*        width: 56px;*/
-/*        height: 56px;*/
-/*    }*/
-
-/*    .valueIconContainer img {*/
-/*        width: 28px;*/
-/*        height: 28px;*/
-/*    }*/
-
-/*    .valueRow p {*/
-/*        margin-left: 0;*/
-/*        margin-top: 14px;*/
-/*    }*/
-
-/*    .valuesIntro {*/
-/*        margin-top: 30px;*/
-/*        margin-bottom: 40px;*/
-/*    }*/
-
-/*    .valuesIntro p {*/
-/*        font-size: 1.05rem;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 600px) {*/
-
-/*    .studioButton {*/
-/*        width: 100%;*/
-/*        min-width: 0;*/
-/*    }*/
-
-/*    .studioStats {*/
-/*        gap: 18px;*/
-/*    }*/
-/*}*/
-
-
 /* ==========================================================================
    ABOUT PAGE
    ========================================================================== */
@@ -1183,6 +18,7 @@
 
 .aboutHeroContent,
 .aboutExperienceWrapper,
+.aboutGrowthWrapper,
 .aboutValuesWrapper,
 .studioWrapper,
 .skillsWrapper {
@@ -1218,15 +54,8 @@
     inset: 0;
 
     background-image:
-            linear-gradient(
-                    rgba(0, 0, 0, 0.025) 1px,
-                    transparent 1px
-            ),
-            linear-gradient(
-                    90deg,
-                    rgba(0, 0, 0, 0.025) 1px,
-                    transparent 1px
-            );
+            linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
 
     background-size: 40px 40px;
 
@@ -1569,6 +398,7 @@
    ========================================================================== */
 
 .aboutExperienceSection,
+.aboutGrowthSection,
 .aboutValuesSection,
 .studioSection,
 .skillsSection {
@@ -1825,6 +655,658 @@
 
 
 /* ==========================================================================
+   LEARN & BUILD
+   ========================================================================== */
+
+.aboutGrowthSection {
+    position: relative;
+
+    background: var(--background);
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Raster, zelfde patroon als de hero */
+.aboutGrowthSection::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+            linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Vervagende gradient-cirkel */
+.aboutGrowthSection::after {
+    content: "";
+
+    position: absolute;
+
+    top: -260px;
+    left: -220px;
+
+    width: 680px;
+    height: 680px;
+
+    background: var(--gradient);
+
+    border-radius: 50%;
+
+    filter: blur(180px);
+    opacity: 0.08;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* -------------------------------- */
+/* REVEAL                           */
+/* -------------------------------- */
+
+.aboutGrowthSection:not(.isVisible) .growthReveal,
+.aboutGrowthSection:not(.isVisible) .growthStamp {
+    opacity: 0;
+}
+
+.aboutGrowthSection.isVisible .growthReveal {
+    animation: growthRiseIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@keyframes growthRiseIn {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* -------------------------------- */
+/* BOARD: één container voor A + B/C */
+/* -------------------------------- */
+
+.growthBoard {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand);
+    box-shadow: 10px 10px var(--border);
+}
+
+.growthBoardSingle {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.growthBoardColumn {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.growthBoardRight {
+    border-left: 2px solid var(--brand);
+}
+
+.growthBoardSingle .growthBoardRight {
+    border-left: 0;
+}
+
+.growthSubBlock {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.growthSubBlock + .growthSubBlock {
+    flex: 1;
+
+    border-top: 2px solid var(--brand);
+}
+
+
+/* -------------------------------- */
+/* SHARED HEADER (A, B, C)          */
+/* -------------------------------- */
+
+.growthPanelHeader {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 62px;
+
+    padding: 15px 20px;
+
+    background: var(--brand);
+    color: var(--text-title-color-alternate);
+}
+
+.growthPanelNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border: 2px solid var(--text-title-color-alternate);
+
+    font-size: 0.72rem;
+    font-weight: 900;
+
+    transform: rotate(-6deg);
+}
+
+.growthPanelHeader h3 {
+    flex: 1;
+
+    margin: 0;
+
+    color: var(--text-title-color-alternate);
+
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.growthPanelCount {
+    padding: 4px 9px;
+
+    background: var(--background);
+    color: var(--brand);
+
+    font-size: 0.64rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.growthPanelBody {
+    padding: 26px 24px;
+}
+
+
+/* -------------------------------- */
+/* A - EDUCATION (ongewijzigd)      */
+/* -------------------------------- */
+
+.growthTimeline {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    margin: 0;
+    padding: 0 0 0 32px;
+
+    list-style: none;
+}
+
+/* Lijn die zichzelf tekent */
+.growthTimeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 6px;
+    bottom: 6px;
+    left: 8px;
+
+    width: 2px;
+
+    background: linear-gradient(
+            to bottom,
+            var(--main-blue),
+            var(--main-red),
+            var(--main-orange)
+    );
+
+    transform: scaleY(0);
+    transform-origin: top;
+
+    transition: transform 1.4s cubic-bezier(0.6, 0, 0.2, 1) 0.3s;
+}
+
+.aboutGrowthSection.isVisible .growthTimeline::before {
+    transform: scaleY(1);
+}
+
+.growthTimelineItem {
+    position: relative;
+
+    min-width: 0;
+}
+
+.growthTimelineMarker {
+    position: absolute;
+
+    top: 2px;
+    left: -32px;
+
+    width: 18px;
+    height: 18px;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand);
+
+    transform: rotate(45deg);
+}
+
+.growthTimelineMarker::after {
+    content: "";
+
+    position: absolute;
+    inset: 3px;
+
+    background: var(--brand);
+}
+
+.growthTimelineItem.isLive .growthTimelineMarker {
+    animation: growthPulse 1.6s ease-out infinite;
+}
+
+@keyframes growthPulse {
+    0% {
+        box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 45%, transparent);
+    }
+
+    100% {
+        box-shadow: 0 0 0 12px transparent;
+    }
+}
+
+.growthTimelineMeta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.growthTimelinePeriod {
+    color: var(--brand);
+
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+/* REC-lampje voor een lopende opleiding */
+.growthLiveBadge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 3px 8px;
+
+    border: 1px solid #d1373f;
+    color: #d1373f;
+
+    font-size: 0.6rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+.growthLiveBadge i {
+    width: 7px;
+    height: 7px;
+
+    background: #d1373f;
+
+    border-radius: 50%;
+
+    animation: growthBlink 1s steps(2, start) infinite;
+}
+
+@keyframes growthBlink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.growthTimelineItem h4 {
+    margin: 6px 0 2px;
+
+    font-size: 1.15rem;
+    line-height: 1.25;
+}
+
+.growthTimelineSchool {
+    margin: 0;
+
+    font-size: 0.86rem;
+
+    opacity: 0.72;
+}
+
+.growthDegree {
+    display: inline-block;
+
+    margin-top: 9px;
+    padding: 4px 9px;
+
+    border: 1px solid var(--brand-light);
+
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+
+/* -------------------------------- */
+/* B - CERTIFICATIONS (compact)     */
+/* -------------------------------- */
+
+.growthStamps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px 16px;
+
+    margin: 0;
+    padding: 6px 8px 0 0;
+
+    list-style: none;
+}
+
+.growthStamp {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 14px 16px 15px;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand);
+
+    transform: rotate(var(--tilt, 0deg));
+
+    transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+}
+
+/* Gestippelde binnenrand, zoals een stempel */
+.growthStamp::before {
+    content: "";
+
+    position: absolute;
+    inset: 4px;
+
+    border: 1px dashed var(--brand-light);
+
+    pointer-events: none;
+}
+
+.growthStamp:hover {
+    transform: rotate(0deg) translateY(-3px);
+
+    box-shadow: 5px 5px var(--border);
+}
+
+.aboutGrowthSection.isVisible .growthStamp {
+    animation: growthStampIn 0.55s cubic-bezier(0.2, 1.6, 0.4, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 130ms + 450ms);
+}
+
+@keyframes growthStampIn {
+    from {
+        opacity: 0;
+        transform: rotate(calc(var(--tilt, 0deg) - 14deg)) scale(1.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(var(--tilt, 0deg)) scale(1);
+    }
+}
+
+.growthStampSeal {
+    position: absolute;
+
+    top: -11px;
+    right: -9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 28px;
+    height: 28px;
+
+    background: var(--brand);
+    color: var(--text-title-color-alternate);
+
+    border: 2px solid var(--background);
+    border-radius: 50%;
+
+    box-shadow: 3px 3px var(--border);
+
+    font-size: 0.75rem;
+    font-weight: 900;
+
+    transform: rotate(12deg);
+}
+
+/* Jaartal in dezelfde stijl als de periode bij Education */
+.growthStampYear {
+    color: var(--brand);
+
+    font-size: 0.66rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.growthStamp h4 {
+    margin: 4px 0 2px;
+
+    font-size: 0.98rem;
+    line-height: 1.25;
+
+    overflow-wrap: anywhere;
+}
+
+.growthStamp p {
+    margin: 0;
+
+    font-size: 0.78rem;
+
+    opacity: 0.72;
+}
+
+
+/* -------------------------------- */
+/* C - DEVELOPMENT                  */
+/* Markers in dezelfde ruit-stijl    */
+/* als de Education-tijdlijn.        */
+/* -------------------------------- */
+
+.growthEq {
+    display: flex;
+    align-items: flex-end;
+
+    gap: 3px;
+
+    height: 16px;
+}
+
+.growthEq i {
+    width: 3px;
+    height: 100%;
+
+    background: var(--text-title-color-alternate);
+
+    transform-origin: bottom;
+
+    animation: growthEq 0.9s ease-in-out infinite alternate;
+}
+
+.growthEq i:nth-child(2) { animation-delay: -0.3s; }
+.growthEq i:nth-child(3) { animation-delay: -0.6s; }
+.growthEq i:nth-child(4) { animation-delay: -0.15s; }
+.growthEq i:nth-child(5) { animation-delay: -0.45s; }
+
+@keyframes growthEq {
+    from {
+        transform: scaleY(0.2);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.growthTracklist {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.growthTrack {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 14px minmax(0, 1fr) auto;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 11px 8px;
+
+    border-bottom: 1px solid var(--brand-light);
+
+    overflow: hidden;
+
+    transition:
+            background 0.2s ease,
+            padding-left 0.2s ease;
+}
+
+.growthTrack:last-child {
+    border-bottom: 0;
+}
+
+/* Playhead die bij hover onder de regel doorloopt */
+.growthTrack::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+            90deg,
+            var(--main-blue),
+            var(--main-red),
+            var(--main-orange)
+    );
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.5s ease;
+}
+
+.growthTrack:hover {
+    padding-left: 16px;
+
+    background: var(--brand-pale);
+}
+
+.growthTrack:hover::after {
+    transform: scaleX(1);
+}
+
+.growthTrackMarker {
+    position: relative;
+
+    width: 12px;
+    height: 12px;
+
+    margin-left: 1px;
+
+    background: var(--background);
+
+    border: 2px solid var(--brand);
+
+    transform: rotate(45deg);
+
+    transition: background 0.2s ease;
+}
+
+.growthTrack:hover .growthTrackMarker {
+    background: var(--brand);
+}
+
+.growthTrackInfo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.growthTrackInfo strong {
+    font-size: 0.92rem;
+    line-height: 1.3;
+}
+
+.growthTrackInfo span {
+    font-size: 0.72rem;
+
+    opacity: 0.68;
+}
+
+.growthTrackYear {
+    color: var(--brand);
+
+    font-size: 0.66rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+
+/* ==========================================================================
    CORE VALUES
    ========================================================================== */
 
@@ -1832,6 +1314,7 @@
     background: var(--background);
 }
 
+.growthIntroLayout,
 .valuesIntroLayout,
 .skillsIntroLayout {
     display: grid;
@@ -1846,6 +1329,7 @@
     margin-bottom: 65px;
 }
 
+.growthIntroLayout > p,
 .valuesIntroLayout > p,
 .skillsIntroLayout > p {
     margin: 0;
@@ -1965,22 +1449,8 @@
     gap: clamp(45px, 7vw, 90px);
 }
 
-
-/* -------------------------------- */
-/* STUDIO IMAGE + BUTTON COMPONENT  */
-/* -------------------------------- */
-
-/*
-    Dit is bewust dezelfde constructie als:
-
-    .aboutHeroRight
-        .aboutImageWrapper
-        .resumeButton
-
-    De studio carousel en website-button zitten dus
-    binnen één border + shadow.
-*/
-
+/* Carousel en website-button zitten binnen één border + shadow,
+   dezelfde constructie als .aboutHeroRight + .resumeButton */
 .studioVisualColumn {
     display: flex;
     flex-direction: column;
@@ -1997,11 +1467,6 @@
 
     overflow: hidden;
 }
-
-
-/* -------------------------------- */
-/* STUDIO CAROUSEL                  */
-/* -------------------------------- */
 
 .studioCarousel {
     position: relative;
@@ -2029,11 +1494,6 @@
 
     overflow: hidden;
 }
-
-
-/* -------------------------------- */
-/* STUDIO SLIDES                    */
-/* -------------------------------- */
 
 .studioSlide {
     position: absolute;
@@ -2064,11 +1524,6 @@
     z-index: 1;
 }
 
-
-/* -------------------------------- */
-/* STUDIO COUNTER                   */
-/* -------------------------------- */
-
 .studioCarouselCounter {
     position: absolute;
 
@@ -2098,11 +1553,6 @@
     opacity: 0.45;
 }
 
-
-/* -------------------------------- */
-/* STUDIO LOCATION LABEL            */
-/* -------------------------------- */
-
 .studioImageLabel {
     position: absolute;
 
@@ -2126,11 +1576,6 @@
 
     transform: rotate(-2deg);
 }
-
-
-/* -------------------------------- */
-/* STUDIO CAROUSEL BUTTONS          */
-/* -------------------------------- */
 
 .studioCarouselButton {
     position: absolute;
@@ -2180,78 +1625,6 @@
     right: 14px;
 }
 
-
-/* -------------------------------- */
-/* STUDIO DOTS                      */
-/* -------------------------------- */
-
-.studioDots {
-    position: absolute;
-
-    left: 50%;
-    bottom: 22px;
-
-    z-index: 5;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 7px;
-
-    transform: translateX(-50%);
-}
-
-.studioDot {
-    position: relative;
-
-    width: 28px;
-    height: 7px;
-
-    padding: 0;
-
-    background: rgba(255, 255, 255, 0.65);
-
-    border: 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-
-    cursor: pointer;
-
-    transition:
-            width 0.3s ease,
-            background 0.3s ease;
-}
-
-.studioDot::after {
-    content: "";
-
-    position: absolute;
-
-    inset: -10px 0;
-}
-
-.studioDot.active {
-    width: 48px;
-
-    background: var(--brand);
-}
-
-
-/* -------------------------------- */
-/* STUDIO WEBSITE BUTTON            */
-/* -------------------------------- */
-
-/*
-    Exact dezelfde basisopbouw als .resumeButton.
-
-    Belangrijk:
-    - geen eigen buiten-border
-    - geen eigen shadow
-    - geen margin
-    - geen gap
-    - border-top scheidt image en button
-*/
-
 .studioWebsiteButton {
     display: flex;
     justify-content: space-between;
@@ -2294,11 +1667,6 @@
     color: var(--text-title-color-alternate);
 }
 
-
-/* -------------------------------- */
-/* STUDIO TEXT                      */
-/* -------------------------------- */
-
 .studioContent {
     display: flex;
     flex-direction: column;
@@ -2329,11 +1697,6 @@
 
     opacity: 0.82;
 }
-
-
-/* -------------------------------- */
-/* STUDIO STATS                     */
-/* -------------------------------- */
 
 .studioStats {
     display: grid;
@@ -2515,13 +1878,11 @@
 @keyframes cvToastSlideIn {
     from {
         opacity: 0;
-
         transform: translateY(16px);
     }
 
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
 }
@@ -2577,8 +1938,7 @@
 .cvToastError {
     border-color: #d1373f;
 
-    box-shadow:
-            7px 7px rgba(209, 55, 63, 0.35);
+    box-shadow: 7px 7px rgba(209, 55, 63, 0.35);
 }
 
 .cvToastError .cvToastIcon {
@@ -2616,7 +1976,6 @@
 .cvToastClose:focus-visible,
 .aboutContactBlock a:focus-visible,
 .studioCarouselButton:focus-visible,
-.studioDot:focus-visible,
 .studioWebsiteButton:focus-visible {
     outline: 3px solid var(--brand);
     outline-offset: 4px;
@@ -2645,15 +2004,26 @@
     }
 
     .experienceGrid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 
 /* ==========================================================================
-   RESPONSIVE - SKILLS
+   RESPONSIVE - LEARN & BUILD + SKILLS
    ========================================================================== */
+
+@media (max-width: 1050px) {
+
+    .growthBoard {
+        grid-template-columns: 1fr;
+    }
+
+    .growthBoardRight {
+        border-top: 2px solid var(--brand);
+        border-left: 0;
+    }
+}
 
 @media (max-width: 950px) {
 
@@ -2676,12 +2046,14 @@
 
     .aboutHeroSection,
     .aboutExperienceSection,
+    .aboutGrowthSection,
     .aboutValuesSection,
     .studioSection,
     .skillsSection {
         padding: 80px 28px;
     }
 
+    .growthIntroLayout,
     .valuesIntroLayout,
     .skillsIntroLayout {
         grid-template-columns: 1fr;
@@ -2710,6 +2082,7 @@
 
     .aboutHeroSection,
     .aboutExperienceSection,
+    .aboutGrowthSection,
     .aboutValuesSection,
     .studioSection,
     .skillsSection {
@@ -2728,8 +2101,7 @@
 
     .aboutContactBlock > div {
         border-right: 0;
-        border-bottom:
-                1px solid var(--brand-light);
+        border-bottom: 1px solid var(--brand-light);
     }
 
     .aboutContactBlock > div:last-child {
@@ -2751,6 +2123,14 @@
 
     .experienceGrid {
         grid-template-columns: 1fr;
+    }
+
+    .growthStamps {
+        grid-template-columns: 1fr;
+    }
+
+    .growthPanelBody {
+        padding: 22px 18px;
     }
 
     .valueRow {
@@ -2807,6 +2187,7 @@
 
     .aboutHeroSection,
     .aboutExperienceSection,
+    .aboutGrowthSection,
     .aboutValuesSection,
     .studioSection,
     .skillsSection {
@@ -2825,8 +2206,7 @@
 
     .aboutJim,
     .aboutHorvath {
-        font-size:
-                clamp(2.6rem, 15vw, 4.2rem);
+        font-size: clamp(2.6rem, 15vw, 4.2rem);
     }
 
     .aboutSectionNumber {
@@ -2842,6 +2222,14 @@
         padding: 22px;
     }
 
+    .growthBoard {
+        box-shadow: 7px 7px var(--border);
+    }
+
+    .growthTrack {
+        gap: 12px;
+    }
+
     .studioCarouselButton {
         width: 38px;
         height: 38px;
@@ -2851,23 +2239,13 @@
         left: 12px;
         bottom: 14px;
     }
-
-    .studioDots {
-        bottom: 16px;
-    }
-
-    .studioDot {
-        width: 22px;
-    }
-
-    .studioDot.active {
-        width: 38px;
-    }
 }
 
 
 /* ==========================================================================
    REDUCED MOTION
+   De Learn & Build-animaties zijn hier bewust niet uitgezet,
+   zodat ze ook zichtbaar zijn als Windows-animaties uit staan.
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
