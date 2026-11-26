@@ -1,6 +1,6 @@
 .completeHomePage {
     --home-max: 1500px;
-    --home-header-offset: 92px;
+    --home-header-offset: var(--nav-total-height);
     --home-footer-offset: 26px;
     --home-viewport: calc(100vh - var(--home-header-offset) - var(--home-footer-offset));
 
